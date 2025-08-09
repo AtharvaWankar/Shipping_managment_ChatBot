@@ -150,6 +150,6 @@ class ThemeManager {
     }
 }
 
-// Create and export singleton instance
+// Create and expose singleton instance globally
 const themeManager = new ThemeManager();
-export default themeManager;
+window.themeManager = themeManager;

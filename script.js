@@ -1,7 +1,4 @@
 // Main Application Script
-import awsConfig from './aws-config.js';
-import themeManager from './theme-manager.js';
-import chatManager from './chat-manager.js';
 
 class App {
     constructor() {
@@ -125,7 +122,9 @@ class App {
     }
 
     updateModelInfo() {
-        const modelInfo = awsConfig.getModelInfo();
+        if (!window.awsConfig) return;
+        
+        const modelInfo = window.awsConfig.getModelInfo();
         const modelNameElement = document.querySelector('.model-name');
         const modelStatusElement = document.querySelector('.model-status');
 
@@ -134,14 +133,16 @@ class App {
         }
 
         if (modelStatusElement) {
-            modelStatusElement.textContent = awsConfig.isInitialized() ? 'Active' : 'Inactive';
-            modelStatusElement.style.background = awsConfig.isInitialized() ? 'var(--color-teal)' : 'var(--color-accent)';
+            modelStatusElement.textContent = window.awsConfig.isInitialized() ? 'Active' : 'Inactive';
+            modelStatusElement.style.background = window.awsConfig.isInitialized() ? 'var(--color-teal)' : 'var(--color-accent)';
         }
     }
 
     async clearAllChatHistory() {
         try {
-            await chatManager.deleteAllChatHistory();
+            if (window.chatManager) {
+                await window.chatManager.deleteAllChatHistory();
+            }
         } catch (error) {
             console.error('Error clearing chat history:', error);
             this.showError('Failed to clear chat history');
@@ -190,16 +191,16 @@ class App {
 
     // Public method to check initialization status
     isAppInitialized() {
-        return this.isInitialized && awsConfig.isInitialized();
+        return this.isInitialized && window.awsConfig && window.awsConfig.isInitialized();
     }
 
     // Public method to get app status
     getAppStatus() {
         return {
             initialized: this.isInitialized,
-            awsConfigured: awsConfig.isInitialized(),
-            currentTheme: themeManager.getCurrentTheme(),
-            currentSession: chatManager.getCurrentSession()
+            awsConfigured: window.awsConfig ? window.awsConfig.isInitialized() : false,
+            currentTheme: window.themeManager ? window.themeManager.getCurrentTheme() : 'light',
+            currentSession: window.chatManager ? window.chatManager.getCurrentSession() : null
         };
     }
 }
@@ -209,9 +210,6 @@ const app = new App();
 
 // Export for debugging purposes
 window.app = app;
-window.awsConfig = awsConfig;
-window.themeManager = themeManager;
-window.chatManager = chatManager;
 
 console.log('Professional Chatbot Application Loaded');
 console.log('Use window.app.getAppStatus() to check application status');

@@ -1,5 +1,4 @@
 // Chat Management and Message Handling
-import awsConfig from './aws-config.js';
 
 class ChatManager {
     constructor() {
@@ -114,7 +113,7 @@ class ChatManager {
         if (!messageText) return;
 
         // Check if AWS is initialized
-        if (!awsConfig.isInitialized()) {
+        if (!window.awsConfig || !window.awsConfig.isInitialized()) {
             this.showError('Please configure AWS credentials first.');
             return;
         }
@@ -138,7 +137,7 @@ class ChatManager {
 
         try {
             // Get response from Claude
-            const response = await awsConfig.invokeClaude(messageText);
+            const response = await window.awsConfig.invokeClaude(messageText);
             
             // Add assistant message
             const assistantMessage = {
@@ -267,10 +266,10 @@ class ChatManager {
     }
 
     async saveChatSession() {
-        if (!awsConfig.isInitialized() || this.messages.length === 0) return;
+        if (!window.awsConfig || !window.awsConfig.isInitialized() || this.messages.length === 0) return;
 
         try {
-            await awsConfig.saveChatSession(this.currentSessionId, this.messages);
+            await window.awsConfig.saveChatSession(this.currentSessionId, this.messages);
             this.loadChatHistory(); // Refresh chat history
         } catch (error) {
             console.error('Error saving chat session:', error);
@@ -278,10 +277,10 @@ class ChatManager {
     }
 
     async loadChatHistory() {
-        if (!awsConfig.isInitialized() || !this.chatHistoryList) return;
+        if (!window.awsConfig || !window.awsConfig.isInitialized() || !this.chatHistoryList) return;
 
         try {
-            const sessions = await awsConfig.listChatSessions();
+            const sessions = await window.awsConfig.listChatSessions();
             this.displayChatHistory(sessions);
         } catch (error) {
             console.error('Error loading chat history:', error);
@@ -337,10 +336,10 @@ class ChatManager {
     }
 
     async loadChatSession(sessionId) {
-        if (!awsConfig.isInitialized()) return;
+        if (!window.awsConfig || !window.awsConfig.isInitialized()) return;
 
         try {
-            const sessionData = await awsConfig.loadChatSession(sessionId);
+            const sessionData = await window.awsConfig.loadChatSession(sessionId);
             if (sessionData) {
                 this.currentSessionId = sessionId;
                 this.messages = sessionData.messages || [];
@@ -363,12 +362,12 @@ class ChatManager {
     }
 
     async deleteChatSession(sessionId) {
-        if (!awsConfig.isInitialized()) return;
+        if (!window.awsConfig || !window.awsConfig.isInitialized()) return;
 
         if (!confirm('Are you sure you want to delete this chat session?')) return;
 
         try {
-            await awsConfig.deleteChatSession(sessionId);
+            await window.awsConfig.deleteChatSession(sessionId);
             
             // If we're deleting the current session, create a new one
             if (sessionId === this.currentSessionId) {
@@ -383,12 +382,12 @@ class ChatManager {
     }
 
     async deleteAllChatHistory() {
-        if (!awsConfig.isInitialized()) return;
+        if (!window.awsConfig || !window.awsConfig.isInitialized()) return;
 
         if (!confirm('Are you sure you want to delete all chat history? This action cannot be undone.')) return;
 
         try {
-            await awsConfig.deleteAllChatSessions();
+            await window.awsConfig.deleteAllChatSessions();
             this.createNewSession();
             this.loadChatHistory();
         } catch (error) {
@@ -508,6 +507,6 @@ class ChatManager {
     }
 }
 
-// Create and export singleton instance
+// Create and expose singleton instance globally
 const chatManager = new ChatManager();
-export default chatManager;
+window.chatManager = chatManager;

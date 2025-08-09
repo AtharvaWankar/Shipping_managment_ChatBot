@@ -5,17 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Chatbot</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- AWS SDK v3 -->
-    <script type="importmap">
-    {
-        "imports": {
-            "@aws-sdk/client-bedrock-runtime": "https://cdn.skypack.dev/@aws-sdk/client-bedrock-runtime@3.418.0",
-            "@aws-sdk/client-s3": "https://cdn.skypack.dev/@aws-sdk/client-s3@3.418.0"
-        }
-    }
-    </script>
     <!-- Feather Icons -->
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- AWS SDK Bundle (simplified approach) -->
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1691.0.min.js"></script>
 </head>
 <body>
     <!-- Hamburger Menu Button -->
@@ -137,9 +130,9 @@
     </div>
 
     <!-- Scripts -->
-    <script type="module" src="aws-config.js"></script>
-    <script type="module" src="theme-manager.js"></script>
-    <script type="module" src="chat-manager.js"></script>
-    <script type="module" src="script.js"></script>
+    <script src="aws-config.js"></script>
+    <script src="theme-manager.js"></script>
+    <script src="chat-manager.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
