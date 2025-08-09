@@ -1,5 +1,5 @@
 // AWS Configuration and Service Initialization using AWS SDK v3
-import { BedrockRuntimeClient, InvokeModelCommand } from '@aws-sdk/client-bedrock-runtime';
+import { BedrockAgentRuntimeClient, RetrieveAndGenerateCommand } from '@aws-sdk/client-bedrock-agent-runtime';
 import { S3Client, CreateBucketCommand, PutObjectCommand, ListObjectsV2Command, DeleteObjectCommand, GetObjectCommand } from '@aws-sdk/client-s3';
 
 class AWSConfig {
@@ -7,10 +7,10 @@ class AWSConfig {
         this.accessKeyId = 'AKIARHJJMTTSEY2U6XQF';
         this.secretAccessKey = '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';
         this.region = 'us-east-1';
-        this.bedrockClient = null;
+        this.bedrockAgentClient = null;
         this.s3Client = null;
         this.bucketName = 'chat-history';
-        this.modelId = 'anthropic.claude-3-5-sonnet-20241022-v2:0';
+        this.modelId = 'anthropic.claude-3-7-sonnet-20250219-v1:0';
         this.knowledgeBaseId = 'P33K9CRFWL';
         this.initialized = false;
         
@@ -26,8 +26,8 @@ class AWSConfig {
                 secretAccessKey: this.secretAccessKey,
             };
 
-            // Initialize Bedrock Runtime client
-            this.bedrockClient = new BedrockRuntimeClient({
+            // Initialize Bedrock Agent Runtime client (for knowledge base queries)
+            this.bedrockAgentClient = new BedrockAgentRuntimeClient({
                 region: this.region,
                 credentials: credentials,
             });
@@ -69,45 +69,50 @@ class AWSConfig {
         }
     }
 
-    // Invoke Claude model via AWS Bedrock
+    // Query knowledge base via AWS Bedrock Agent Runtime (like your Python code)
     async invokeClaude(prompt, maxTokens = 4000) {
         if (!this.initialized) {
             throw new Error('AWS services not initialized. Call initialize() first.');
         }
 
         try {
-            console.log('Invoking Claude with prompt:', prompt);
+            console.log('Querying knowledge base with prompt:', prompt);
             
-            const requestBody = {
-                anthropic_version: "bedrock-2023-05-31",
-                max_tokens: maxTokens,
-                messages: [
-                    {
-                        role: "user",
-                        content: prompt
+            // Use RetrieveAndGenerateCommand like in your Python code
+            const command = new RetrieveAndGenerateCommand({
+                input: {
+                    text: prompt
+                },
+                retrieveAndGenerateConfiguration: {
+                    type: 'KNOWLEDGE_BASE',
+                    knowledgeBaseConfiguration: {
+                        knowledgeBaseId: this.knowledgeBaseId,
+                        modelArn: this.modelId
                     }
-                ]
-            };
-
-            const command = new InvokeModelCommand({
-                modelId: this.modelId,
-                contentType: 'application/json',
-                accept: 'application/json',
-                body: JSON.stringify(requestBody)
+                }
             });
 
-            const response = await this.bedrockClient.send(command);
-            const responseBody = JSON.parse(new TextDecoder().decode(response.body));
+            const response = await this.bedrockAgentClient.send(command);
             
-            if (responseBody.content && responseBody.content[0] && responseBody.content[0].text) {
-                return responseBody.content[0].text;
+            if (response.output && response.output.text) {
+                return this.formatResponse(response.output.text);
             } else {
-                throw new Error('Unexpected response format from Claude model');
+                throw new Error('No response text received from knowledge base');
             }
         } catch (error) {
-            console.error('Error invoking Claude model:', error);
+            console.error('Error querying knowledge base:', error);
             throw new Error(`Failed to get response from Claude: ${error.message}. Please check your AWS credentials and model access.`);
         }
+    }
+
+    // Format response text like in your Python code
+    formatResponse(text) {
+        const formattedText = text.trim();
+        const paragraphs = formattedText.split('\n\n');
+        const cleanParagraphs = paragraphs
+            .map(p => p.trim())
+            .filter(p => p.length > 0);
+        return cleanParagraphs.join('\n\n');
     }
 
     // Save chat session to S3
