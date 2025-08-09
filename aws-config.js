@@ -51,24 +51,51 @@ class AWSConfig {
         }
     }
 
-    // Invoke Claude model
-    async invokeClaude(prompt, maxTokens = 1000) {
+    // Invoke Claude model via AWS Bedrock
+    async invokeClaude(prompt, maxTokens = 4000) {
         if (!this.initialized) {
             throw new Error('AWS services not initialized. Call initialize() first.');
         }
 
         try {
-            // For demo purposes, return a mock response since Bedrock setup is complex
-            // In production, you would use actual Bedrock runtime calls
             console.log('Invoking Claude with prompt:', prompt);
             
-            // Simulate API delay
-            await new Promise(resolve => setTimeout(resolve, 2000));
+            // Create Bedrock Runtime client
+            const bedrockRuntime = new AWS.BedrockRuntime({
+                region: this.region,
+                accessKeyId: this.accessKeyId,
+                secretAccessKey: this.secretAccessKey
+            });
+
+            const requestBody = {
+                anthropic_version: "bedrock-2023-05-31",
+                max_tokens: maxTokens,
+                messages: [
+                    {
+                        role: "user",
+                        content: prompt
+                    }
+                ]
+            };
+
+            const params = {
+                modelId: this.modelId,
+                contentType: 'application/json',
+                accept: 'application/json',
+                body: JSON.stringify(requestBody)
+            };
+
+            const response = await bedrockRuntime.invokeModel(params).promise();
+            const responseBody = JSON.parse(response.body.toString());
             
-            return `I'm a demonstration response to: "${prompt}". This is a mock response because the full AWS Bedrock integration requires proper setup. Your chatbot interface is working perfectly!`;
+            if (responseBody.content && responseBody.content[0] && responseBody.content[0].text) {
+                return responseBody.content[0].text;
+            } else {
+                throw new Error('Unexpected response format from Claude model');
+            }
         } catch (error) {
             console.error('Error invoking Claude model:', error);
-            throw new Error('Failed to get response from Claude. Please check your AWS credentials and model access.');
+            throw new Error(`Failed to get response from Claude: ${error.message}. Please check your AWS credentials and model access.`);
         }
     }
 
