@@ -7,8 +7,15 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
-    <!-- AWS SDK Bundle (simplified approach) -->
-    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1691.0.min.js"></script>
+    <!-- AWS SDK v3 via CDN for better Bedrock support -->
+    <script type="importmap">
+    {
+        "imports": {
+            "@aws-sdk/client-bedrock-runtime": "https://cdn.skypack.dev/@aws-sdk/client-bedrock-runtime@3.600.0",
+            "@aws-sdk/client-s3": "https://cdn.skypack.dev/@aws-sdk/client-s3@3.600.0"
+        }
+    }
+    </script>
 </head>
 <body>
     <!-- Hamburger Menu Button -->
@@ -130,7 +137,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="aws-config.js"></script>
+    <script type="module" src="aws-config.js"></script>
     <script src="theme-manager.js"></script>
     <script src="chat-manager.js"></script>
     <script src="script.js"></script>

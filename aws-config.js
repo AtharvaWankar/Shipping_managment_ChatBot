@@ -1,26 +1,41 @@
-// AWS Configuration and Service Initialization
+// AWS Configuration and Service Initialization using AWS SDK v3
+import { BedrockRuntimeClient, InvokeModelCommand } from '@aws-sdk/client-bedrock-runtime';
+import { S3Client, CreateBucketCommand, PutObjectCommand, ListObjectsV2Command, DeleteObjectCommand, GetObjectCommand } from '@aws-sdk/client-s3';
+
 class AWSConfig {
     constructor() {
         this.accessKeyId = 'AKIARHJJMTTSEY2U6XQF';
         this.secretAccessKey = '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';
         this.region = 'us-east-1';
+        this.bedrockClient = null;
+        this.s3Client = null;
         this.bucketName = 'chat-history';
         this.modelId = 'anthropic.claude-3-7-sonnet-20250219-v1:0';
         this.knowledgeBaseId = 'P33K9CRFWL';
         this.initialized = false;
         
         // Auto-initialize on construction
-        this.initialize().catch(console.error);
+        this.initialize();
     }
 
     // Initialize AWS clients with credentials
     async initialize() {
         try {
-            // Configure AWS SDK v2
-            AWS.config.update({
+            const credentials = {
                 accessKeyId: this.accessKeyId,
                 secretAccessKey: this.secretAccessKey,
-                region: this.region
+            };
+
+            // Initialize Bedrock Runtime client
+            this.bedrockClient = new BedrockRuntimeClient({
+                region: this.region,
+                credentials: credentials,
+            });
+
+            // Initialize S3 client
+            this.s3Client = new S3Client({
+                region: this.region,
+                credentials: credentials,
             });
 
             // Create chat history bucket if it doesn't exist
@@ -31,7 +46,7 @@ class AWSConfig {
             return true;
         } catch (error) {
             console.error('Failed to initialize AWS services:', error);
-            // For now, let's continue even if AWS fails to allow UI testing
+            // Set as initialized anyway to allow UI testing
             this.initialized = true;
             return false;
         }
@@ -40,18 +55,21 @@ class AWSConfig {
     // Ensure the chat history bucket exists
     async ensureBucketExists() {
         try {
-            const s3 = new AWS.S3();
-            await s3.createBucket({ Bucket: this.bucketName }).promise();
+            const createBucketCommand = new CreateBucketCommand({
+                Bucket: this.bucketName
+            });
+            
+            await this.s3Client.send(createBucketCommand);
             console.log(`Bucket ${this.bucketName} created successfully`);
         } catch (error) {
-            // Bucket might already exist - this is fine
-            if (error.code !== 'BucketAlreadyOwnedByYou' && error.code !== 'BucketAlreadyExists') {
+            // Bucket might already exist
+            if (error.name !== 'BucketAlreadyOwnedByYou' && error.name !== 'BucketAlreadyExists') {
                 console.error('Error creating bucket:', error);
             }
         }
     }
 
-    // Invoke Claude model via AWS Bedrock using custom service definition
+    // Invoke Claude model via AWS Bedrock
     async invokeClaude(prompt, maxTokens = 4000) {
         if (!this.initialized) {
             throw new Error('AWS services not initialized. Call initialize() first.');
@@ -60,7 +78,6 @@ class AWSConfig {
         try {
             console.log('Invoking Claude with prompt:', prompt);
             
-            // Create the request body for Claude
             const requestBody = {
                 anthropic_version: "bedrock-2023-05-31",
                 max_tokens: maxTokens,
@@ -72,74 +89,15 @@ class AWSConfig {
                 ]
             };
 
-            // Create a custom Bedrock Runtime service since it's not in SDK v2
-            const BedrockRuntime = AWS.Service.defineService('bedrockruntime', ['2023-09-30'], {
-                endpointPrefix: 'bedrock-runtime',
-                protocol: 'rest-json',
-                serviceFullName: 'Amazon Bedrock Runtime',
-                serviceId: 'Bedrock Runtime',
-                signatureVersion: 'v4',
-                uid: 'bedrock-runtime-2023-09-30',
-                operations: {
-                    invokeModel: {
-                        http: {
-                            method: 'POST',
-                            requestUri: '/model/{modelId}/invoke'
-                        },
-                        input: {
-                            type: 'structure',
-                            required: ['modelId', 'body'],
-                            members: {
-                                modelId: {
-                                    location: 'uri',
-                                    locationName: 'modelId'
-                                },
-                                contentType: {
-                                    location: 'header',
-                                    locationName: 'Content-Type'
-                                },
-                                accept: {
-                                    location: 'header',
-                                    locationName: 'Accept'
-                                },
-                                body: {
-                                    type: 'blob'
-                                }
-                            }
-                        },
-                        output: {
-                            type: 'structure',
-                            required: ['body'],
-                            members: {
-                                body: {
-                                    type: 'blob'
-                                },
-                                contentType: {
-                                    location: 'header',
-                                    locationName: 'Content-Type'
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-
-            // Create client instance
-            const bedrockRuntime = new BedrockRuntime({
-                region: this.region,
-                accessKeyId: this.accessKeyId,
-                secretAccessKey: this.secretAccessKey
-            });
-
-            const params = {
+            const command = new InvokeModelCommand({
                 modelId: this.modelId,
                 contentType: 'application/json',
                 accept: 'application/json',
                 body: JSON.stringify(requestBody)
-            };
+            });
 
-            const response = await bedrockRuntime.invokeModel(params).promise();
-            const responseBody = JSON.parse(response.body.toString());
+            const response = await this.bedrockClient.send(command);
+            const responseBody = JSON.parse(new TextDecoder().decode(response.body));
             
             if (responseBody.content && responseBody.content[0] && responseBody.content[0].text) {
                 return responseBody.content[0].text;
@@ -155,7 +113,19 @@ class AWSConfig {
     // Save chat session to S3
     async saveChatSession(sessionId, messages) {
         if (!this.initialized) {
-            return; // Skip if not initialized
+            // Fallback to localStorage if S3 not available
+            try {
+                const sessionData = {
+                    sessionId: sessionId,
+                    timestamp: new Date().toISOString(),
+                    messages: messages
+                };
+                localStorage.setItem(`chat_${sessionId}`, JSON.stringify(sessionData));
+                console.log(`Chat session ${sessionId} saved locally`);
+            } catch (error) {
+                console.error('Error saving chat session locally:', error);
+            }
+            return;
         }
 
         try {
@@ -165,16 +135,49 @@ class AWSConfig {
                 messages: messages
             };
 
-            // For demo, save to localStorage instead of S3
-            localStorage.setItem(`chat_${sessionId}`, JSON.stringify(sessionData));
-            console.log(`Chat session ${sessionId} saved locally`);
+            const command = new PutObjectCommand({
+                Bucket: this.bucketName,
+                Key: `${sessionId}.json`,
+                Body: JSON.stringify(sessionData, null, 2),
+                ContentType: 'application/json'
+            });
+
+            await this.s3Client.send(command);
+            console.log(`Chat session ${sessionId} saved to S3`);
         } catch (error) {
-            console.error('Error saving chat session:', error);
+            console.error('Error saving chat session to S3:', error);
+            // Fallback to localStorage
+            try {
+                const sessionData = {
+                    sessionId: sessionId,
+                    timestamp: new Date().toISOString(),
+                    messages: messages
+                };
+                localStorage.setItem(`chat_${sessionId}`, JSON.stringify(sessionData));
+                console.log(`Chat session ${sessionId} saved locally as fallback`);
+            } catch (localError) {
+                console.error('Error saving chat session locally:', localError);
+            }
         }
     }
 
-    // Load chat session from localStorage
+    // Load chat session from S3 or localStorage
     async loadChatSession(sessionId) {
+        try {
+            if (this.initialized && this.s3Client) {
+                const command = new GetObjectCommand({
+                    Bucket: this.bucketName,
+                    Key: `${sessionId}.json`
+                });
+                const response = await this.s3Client.send(command);
+                const body = await response.Body.transformToString();
+                return JSON.parse(body);
+            }
+        } catch (error) {
+            console.log('S3 load failed, trying localStorage:', error.message);
+        }
+
+        // Fallback to localStorage
         try {
             const sessionData = localStorage.getItem(`chat_${sessionId}`);
             return sessionData ? JSON.parse(sessionData) : null;
@@ -186,49 +189,90 @@ class AWSConfig {
 
     // List all chat sessions
     async listChatSessions() {
+        let sessions = [];
+
+        // Try S3 first
+        if (this.initialized && this.s3Client) {
+            try {
+                const command = new ListObjectsV2Command({
+                    Bucket: this.bucketName
+                });
+                const response = await this.s3Client.send(command);
+                
+                if (response.Contents) {
+                    for (const object of response.Contents) {
+                        const sessionId = object.Key.replace('.json', '');
+                        sessions.push({
+                            sessionId: sessionId,
+                            lastModified: object.LastModified,
+                            size: object.Size,
+                            source: 'S3'
+                        });
+                    }
+                }
+            } catch (error) {
+                console.log('S3 list failed, using localStorage:', error.message);
+            }
+        }
+
+        // Add localStorage sessions
         try {
-            const sessions = [];
             for (let i = 0; i < localStorage.length; i++) {
                 const key = localStorage.key(i);
                 if (key && key.startsWith('chat_')) {
                     const sessionId = key.replace('chat_', '');
-                    const sessionData = JSON.parse(localStorage.getItem(key));
-                    sessions.push({
-                        sessionId: sessionId,
-                        lastModified: new Date(sessionData.timestamp),
-                        size: JSON.stringify(sessionData).length
-                    });
+                    // Avoid duplicates from S3
+                    if (!sessions.find(s => s.sessionId === sessionId)) {
+                        const sessionData = JSON.parse(localStorage.getItem(key));
+                        sessions.push({
+                            sessionId: sessionId,
+                            lastModified: new Date(sessionData.timestamp),
+                            size: JSON.stringify(sessionData).length,
+                            source: 'Local'
+                        });
+                    }
                 }
             }
-            return sessions.sort((a, b) => new Date(b.lastModified) - new Date(a.lastModified));
         } catch (error) {
-            console.error('Error listing chat sessions:', error);
-            return [];
+            console.error('Error listing local sessions:', error);
         }
+
+        return sessions.sort((a, b) => new Date(b.lastModified) - new Date(a.lastModified));
     }
 
     // Delete chat session
     async deleteChatSession(sessionId) {
         try {
-            localStorage.removeItem(`chat_${sessionId}`);
-            console.log(`Chat session ${sessionId} deleted`);
+            if (this.initialized && this.s3Client) {
+                const command = new DeleteObjectCommand({
+                    Bucket: this.bucketName,
+                    Key: `${sessionId}.json`
+                });
+                await this.s3Client.send(command);
+                console.log(`Chat session ${sessionId} deleted from S3`);
+            }
         } catch (error) {
-            console.error('Error deleting chat session:', error);
+            console.log('S3 delete failed:', error.message);
+        }
+
+        // Also delete from localStorage
+        try {
+            localStorage.removeItem(`chat_${sessionId}`);
+            console.log(`Chat session ${sessionId} deleted locally`);
+        } catch (error) {
+            console.error('Error deleting local session:', error);
         }
     }
 
     // Delete all chat sessions
     async deleteAllChatSessions() {
         try {
-            const keys = [];
-            for (let i = 0; i < localStorage.length; i++) {
-                const key = localStorage.key(i);
-                if (key && key.startsWith('chat_')) {
-                    keys.push(key);
-                }
+            const sessions = await this.listChatSessions();
+            
+            for (const session of sessions) {
+                await this.deleteChatSession(session.sessionId);
             }
             
-            keys.forEach(key => localStorage.removeItem(key));
             console.log('All chat sessions deleted');
         } catch (error) {
             console.error('Error deleting all chat sessions:', error);
@@ -244,13 +288,16 @@ class AWSConfig {
     getModelInfo() {
         return {
             modelId: this.modelId,
-            modelName: 'Claude Sonnet 3.7',
+            modelName: 'Claude 3.7 Sonnet',
             provider: 'Anthropic',
-            region: this.region
+            region: this.region,
+            knowledgeBaseId: this.knowledgeBaseId
         };
     }
 }
 
-// Create and expose a singleton instance globally
+// Create and expose singleton instance globally
 const awsConfig = new AWSConfig();
 window.awsConfig = awsConfig;
+
+export default awsConfig;
