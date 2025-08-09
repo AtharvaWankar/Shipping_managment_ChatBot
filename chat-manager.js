@@ -13,6 +13,10 @@ class ChatManager {
         this.inputContainer = null;
         this.charCount = null;
         this.chatHistoryList = null;
+        this.voiceBtn = null;
+        this.micIcon = null;
+        this.recognition = null;
+        this.isListening = false;
         this.init();
     }
 
@@ -34,6 +38,8 @@ class ChatManager {
         this.inputContainer = document.getElementById('inputContainer');
         this.charCount = document.getElementById('charCount');
         this.chatHistoryList = document.getElementById('chatHistoryList');
+        this.voiceBtn = document.getElementById('voiceBtn');
+        this.micIcon = document.getElementById('micIcon');
 
         if (this.messageInput) {
             this.messageInput.addEventListener('keypress', (e) => {
@@ -51,6 +57,12 @@ class ChatManager {
 
         if (this.sendBtn) {
             this.sendBtn.addEventListener('click', () => this.sendMessage());
+        }
+
+        // Voice input setup
+        if (this.voiceBtn) {
+            this.voiceBtn.addEventListener('click', () => this.toggleVoiceRecognition());
+            this.setupVoiceRecognition();
         }
 
         // Load chat history
@@ -420,6 +432,79 @@ class ChatManager {
     // Check if there are unsaved messages
     hasUnsavedMessages() {
         return this.messages.length > 0;
+    }
+
+    // Voice recognition setup
+    setupVoiceRecognition() {
+        if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+            console.warn('Speech recognition not supported in this browser');
+            if (this.voiceBtn) {
+                this.voiceBtn.style.display = 'none';
+            }
+            return;
+        }
+
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        this.recognition = new SpeechRecognition();
+        
+        this.recognition.continuous = false;
+        this.recognition.interimResults = false;
+        this.recognition.lang = 'en-US';
+
+        this.recognition.onstart = () => {
+            this.isListening = true;
+            this.voiceBtn.classList.add('listening');
+            if (this.micIcon) {
+                this.micIcon.setAttribute('data-feather', 'mic-off');
+                feather.replace();
+            }
+        };
+
+        this.recognition.onresult = (event) => {
+            const transcript = event.results[0][0].transcript;
+            if (this.messageInput) {
+                this.messageInput.value = transcript;
+                this.updateCharCount();
+                this.updateSendButton();
+                this.messageInput.focus();
+            }
+        };
+
+        this.recognition.onerror = (event) => {
+            console.error('Speech recognition error:', event.error);
+            this.stopListening();
+            this.showError('Voice recognition error: ' + event.error);
+        };
+
+        this.recognition.onend = () => {
+            this.stopListening();
+        };
+    }
+
+    toggleVoiceRecognition() {
+        if (!this.recognition) return;
+
+        if (this.isListening) {
+            this.recognition.stop();
+        } else {
+            try {
+                this.recognition.start();
+            } catch (error) {
+                console.error('Error starting speech recognition:', error);
+                this.showError('Could not start voice recognition. Please try again.');
+            }
+        }
+    }
+
+    stopListening() {
+        this.isListening = false;
+        if (this.voiceBtn) {
+            this.voiceBtn.classList.remove('listening');
+        }
+        if (this.micIcon) {
+            this.micIcon.setAttribute('data-feather', 'mic');
+            feather.replace();
+        }
     }
 }
 

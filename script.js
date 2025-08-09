@@ -110,18 +110,8 @@ class App {
     }
 
     async promptForCredentials() {
-        // Try to get credentials from environment variables first
-        const accessKey = prompt('Please enter your AWS Access Key ID:') || '';
-        const secretKey = prompt('Please enter your AWS Secret Access Key:') || '';
-        const region = prompt('Please enter your AWS Region (default: us-east-1):') || 'us-east-1';
-
-        if (!accessKey || !secretKey) {
-            this.showError('AWS credentials are required to use the chatbot.');
-            return;
-        }
-
+        // Credentials are now hardcoded - just initialize
         try {
-            await awsConfig.initialize(accessKey, secretKey, region);
             this.isInitialized = true;
             console.log('Application initialized successfully');
             

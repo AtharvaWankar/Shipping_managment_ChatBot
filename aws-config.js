@@ -4,26 +4,23 @@ import { S3Client, CreateBucketCommand, PutObjectCommand, ListObjectsV2Command, 
 
 class AWSConfig {
     constructor() {
-        this.accessKeyId = null;
-        this.secretAccessKey = null;
-        this.region = 'us-east-1'; // Default region
+        this.accessKeyId = 'AKIARHJJMTTSEY2U6XQF';
+        this.secretAccessKey = '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';
+        this.region = 'us-east-1';
         this.bedrockClient = null;
         this.s3Client = null;
         this.bucketName = 'chat-history';
-        this.modelId = 'anthropic.claude-3-5-sonnet-20241022-v2:0';
+        this.modelId = 'anthropic.claude-3-7-sonnet-20250219-v1:0';
+        this.knowledgeBaseId = 'P33K9CRFWL';
         this.initialized = false;
+        
+        // Auto-initialize on construction
+        this.initialize().catch(console.error);
     }
 
     // Initialize AWS clients with credentials
-    async initialize(accessKeyId, secretAccessKey, region = 'us-east-1') {
+    async initialize() {
         try {
-            this.accessKeyId = accessKeyId || process.env.AWS_ACCESS_KEY_ID;
-            this.secretAccessKey = secretAccessKey || process.env.AWS_SECRET_ACCESS_KEY;
-            this.region = region;
-
-            if (!this.accessKeyId || !this.secretAccessKey) {
-                throw new Error('AWS credentials are required. Please provide access key and secret key.');
-            }
 
             const credentials = {
                 accessKeyId: this.accessKeyId,
@@ -33,13 +30,15 @@ class AWSConfig {
             // Initialize Bedrock Runtime client
             this.bedrockClient = new BedrockRuntimeClient({
                 region: this.region,
-                credentials: credentials
+                credentials: credentials,
+                maxAttempts: 3
             });
 
             // Initialize S3 client
             this.s3Client = new S3Client({
                 region: this.region,
-                credentials: credentials
+                credentials: credentials,
+                maxAttempts: 3
             });
 
             // Create chat history bucket if it doesn't exist

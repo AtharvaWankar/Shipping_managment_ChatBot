@@ -564,6 +564,48 @@ body {
   opacity: 0.7;
 }
 
+.voice-btn {
+  background: var(--color-teal);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  color: white;
+  margin-right: 8px;
+}
+
+.voice-btn:hover {
+  background: var(--color-secondary);
+  transform: scale(1.05);
+}
+
+.voice-btn.listening {
+  background: var(--color-accent);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.voice-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
 .send-btn {
   background: var(--color-accent);
   border: none;

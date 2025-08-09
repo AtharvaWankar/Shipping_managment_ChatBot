@@ -2,7 +2,16 @@
 
 ## Overview
 
-This is a professional chatbot application built as a single-page web application that integrates with AWS services. The application provides an AI-powered chat interface using Claude Sonnet 3.7 through AWS Bedrock, with persistent chat history stored in AWS S3. It features a modern, responsive design with glass morphism effects, dark/light theme support, and a clean user experience optimized for professional use.
+This is a professional chatbot application built as a single-page web application that integrates with AWS services. The application provides an AI-powered chat interface using Claude Sonnet 3.7 through AWS Bedrock, with persistent chat history stored in AWS S3. It features a modern, responsive design with glass morphism effects, dark/light theme support, voice-to-text input functionality, and a clean user experience optimized for professional use.
+
+## Recent Changes (August 2025)
+- Hardcoded AWS credentials and model configuration for seamless initialization
+- Added voice-to-text functionality using Web Speech API
+- Implemented microphone button with visual feedback and animations
+- Updated model ID to Claude 3.7 Sonnet (anthropic.claude-3-7-sonnet-20250219-v1:0)
+- Added Knowledge Base ID integration (P33K9CRFWL)
+- Created comprehensive README.md with setup and usage instructions
+- Removed credential prompts for streamlined user experience
 
 ## User Preferences
 
