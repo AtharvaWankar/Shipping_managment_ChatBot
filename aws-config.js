@@ -10,7 +10,8 @@ class AWSConfig {
         this.bedrockAgentClient = null;
         this.s3Client = null;
         this.bucketName = 'chat-history';
-        this.modelId = 'anthropic.claude-3-7-sonnet-20250219-v1:0';
+        // Try inference profile first, fallback to direct model ID
+        this.modelArn = 'arn:aws:bedrock:us-east-1::inference-profile/us.anthropic.claude-3-7-sonnet-20250219-v1:0';
         this.knowledgeBaseId = 'P33K9CRFWL';
         this.initialized = false;
         
@@ -78,27 +79,48 @@ class AWSConfig {
         try {
             console.log('Querying knowledge base with prompt:', prompt);
             
-            // Use RetrieveAndGenerateCommand like in your Python code
-            const command = new RetrieveAndGenerateCommand({
-                input: {
-                    text: prompt
-                },
-                retrieveAndGenerateConfiguration: {
-                    type: 'KNOWLEDGE_BASE',
-                    knowledgeBaseConfiguration: {
-                        knowledgeBaseId: this.knowledgeBaseId,
-                        modelArn: this.modelId
-                    }
-                }
-            });
+            // Try multiple model options like your Python code does
+            const modelOptions = [
+                'arn:aws:bedrock:us-east-1::inference-profile/us.anthropic.claude-3-7-sonnet-20250219-v1:0',
+                'anthropic.claude-3-7-sonnet-20250219-v1:0',
+                'anthropic.claude-3-5-sonnet-20241022-v2:0'
+            ];
 
-            const response = await this.bedrockAgentClient.send(command);
+            let lastError = null;
             
-            if (response.output && response.output.text) {
-                return this.formatResponse(response.output.text);
-            } else {
-                throw new Error('No response text received from knowledge base');
+            for (const modelArn of modelOptions) {
+                try {
+                    const command = new RetrieveAndGenerateCommand({
+                        input: {
+                            text: prompt
+                        },
+                        retrieveAndGenerateConfiguration: {
+                            type: 'KNOWLEDGE_BASE',
+                            knowledgeBaseConfiguration: {
+                                knowledgeBaseId: this.knowledgeBaseId,
+                                modelArn: modelArn
+                            }
+                        }
+                    });
+
+                    const response = await this.bedrockAgentClient.send(command);
+                    
+                    if (response.output && response.output.text) {
+                        console.log(`Success with model: ${modelArn}`);
+                        return this.formatResponse(response.output.text);
+                    } else {
+                        throw new Error('No response text received from knowledge base');
+                    }
+                } catch (error) {
+                    console.log(`Model ${modelArn} failed:`, error.message);
+                    lastError = error;
+                    continue; // Try next model
+                }
             }
+            
+            // If all models failed, throw the last error
+            throw lastError;
+            
         } catch (error) {
             console.error('Error querying knowledge base:', error);
             throw new Error(`Failed to get response from Claude: ${error.message}. Please check your AWS credentials and model access.`);
