@@ -6,7 +6,7 @@ expertMode = true
 channel = "stable-25_05"
 
 [workflows]
-runButton = "Project"
+runButton = "Web Server"
 
 [[workflows.workflow]]
 name = "Project"
@@ -25,6 +25,96 @@ author = "agent"
 task = "shell.exec"
 args = "python -m http.server 5000"
 waitForPort = 5000
+
+[[workflows.workflow]]
+name = "Web Server"
+author = 46199693
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python -m http.server 5000 --bind 0.0.0.0"
+
+[[workflows.workflow]]
+name = "Alternative Server"
+author = 46199693
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python -c \""
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "import http.server"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "import socketserver"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "import os"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = ""
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "PORT = 5000"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "Handler = http.server.SimpleHTTPRequestHandler"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = ""
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "try:"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "    with socketserver.TCPServer(('0.0.0.0', PORT), Handler) as httpd:"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "        print(f'Server running at http://0.0.0.0:{PORT}/')"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "        httpd.serve_forever()"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "except OSError as e:"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "    print(f'Port {PORT} is busy, trying port 8000...')"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "    PORT = 8000"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "    with socketserver.TCPServer(('0.0.0.0', PORT), Handler) as httpd:"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "        print(f'Server running at http://0.0.0.0:{PORT}/')"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "        httpd.serve_forever()"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "\""
 
 [[ports]]
 localPort = 5000
