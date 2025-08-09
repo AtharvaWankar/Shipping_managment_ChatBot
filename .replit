@@ -6,7 +6,7 @@ expertMode = true
 channel = "stable-25_05"
 
 [workflows]
-runButton = "Start Chatbot"
+runButton = "Start Server"
 
 [[workflows.workflow]]
 name = "Project"
@@ -204,6 +204,15 @@ args = "start_server(5000)"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "\""
+
+[[workflows.workflow]]
+name = "Start Server"
+author = 46199693
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python -m http.server 5000 --bind 0.0.0.0"
 
 [[ports]]
 localPort = 5000
