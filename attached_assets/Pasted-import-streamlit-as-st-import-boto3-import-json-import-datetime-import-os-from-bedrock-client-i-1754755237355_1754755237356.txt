@@ -1,0 +1,398 @@
+import streamlit as st
+import boto3
+import json
+import datetime
+import os
+from bedrock_client import BedrockClient
+from styles import get_custom_css
+
+# Page configuration
+st.set_page_config(
+    page_title="AI Knowledge Assistant",
+    page_icon="🤖",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+# Initialize Bedrock client - cleared cache to force reload
+@st.cache_resource
+def init_bedrock_client():
+    """Initialize AWS Bedrock client with credentials"""
+    try:
+        # Get credentials from environment variables with fallback to provided keys
+        access_key = os.getenv("AWS_ACCESS_KEY_ID", "AKIARHJJMTTSEY2U6XQF")
+        secret_key = os.getenv("AWS_SECRET_ACCESS_KEY", "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")
+        region = os.getenv("AWS_DEFAULT_REGION", "us-east-1")
+        
+        return BedrockClient(access_key, secret_key, region)
+    except Exception as e:
+        st.error(f"Failed to initialize AWS Bedrock client: {str(e)}")
+        return None
+
+# Initialize session state
+def init_session_state():
+    """Initialize session state variables"""
+    if "messages" not in st.session_state:
+        st.session_state.messages = []
+    if "dark_mode" not in st.session_state:
+        st.session_state.dark_mode = True  # Default to dark mode
+    if "bedrock_client" not in st.session_state:
+        st.session_state.bedrock_client = init_bedrock_client()
+    if "sidebar_visible" not in st.session_state:
+        st.session_state.sidebar_visible = True
+    if "current_model" not in st.session_state:
+        st.session_state.current_model = "Claude 3.7 Sonnet"
+
+def toggle_theme():
+    """Toggle between dark and light theme"""
+    st.session_state.dark_mode = not st.session_state.dark_mode
+
+def format_timestamp():
+    """Get formatted timestamp for messages"""
+    return datetime.datetime.now().strftime("%H:%M")
+
+def display_message(message, is_user=True):
+    """Display a chat message with proper formatting"""
+    timestamp = message.get("timestamp", format_timestamp())
+    
+    if is_user:
+        with st.container():
+            col1, col2 = st.columns([4, 1])
+            with col1:
+                st.markdown(f"""
+                <div class="user-message">
+                    <div class="message-content">{message['content']}</div>
+                    <div class="message-timestamp">{timestamp}</div>
+                </div>
+                """, unsafe_allow_html=True)
+    else:
+        with st.container():
+            col1, col2 = st.columns([1, 4])
+            with col2:
+                st.markdown(f"""
+                <div class="bot-message">
+                    <div class="message-content">{message['content']}</div>
+                    <div class="message-timestamp">{timestamp}</div>
+                </div>
+                """, unsafe_allow_html=True)
+
+def export_chat_history():
+    """Export chat history as JSON"""
+    if st.session_state.messages:
+        chat_data = {
+            "export_date": datetime.datetime.now().isoformat(),
+            "total_messages": len(st.session_state.messages),
+            "messages": st.session_state.messages
+        }
+        return json.dumps(chat_data, indent=2)
+    return None
+
+def render_professional_sidebar():
+    """Render the professional sidebar with all required features"""
+    with st.sidebar:
+        # Compact Professional Header for Narrow Sidebar
+        st.markdown("""
+        <div style="
+            text-align: center; 
+            padding: 15px 5px;
+            border-bottom: 2px solid rgba(139, 69, 19, 0.3);
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.05), rgba(210, 105, 30, 0.05));
+            border-radius: 10px;
+        ">
+            <h3 style="
+                color: #8B4513; 
+                margin: 0;
+                font-family: 'Orbitron', sans-serif;
+                font-weight: 700;
+                font-size: 0.9rem;
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+                letter-spacing: 0.5px;
+            ">AI</h3>
+            <p style="
+                color: #8B7355;
+                margin: 2px 0 0 0;
+                font-size: 10px;
+                font-style: italic;
+            ">Assistant</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        # Current AI Model Display - Compact
+        st.markdown("🤖", help="Current AI Model")
+        st.markdown(f"""
+        <div style="
+            background: linear-gradient(135deg, #F5F5DC, #FFF8DC);
+            border: 1px solid #8B4513;
+            border-radius: 8px;
+            padding: 8px;
+            text-align: center;
+            margin-bottom: 15px;
+        ">
+            <strong style="color: #8B4513; font-size: 10px;">Claude 3.7</strong>
+            <br><small style="color: #8B7355; font-size: 8px;">Bedrock</small>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        # Theme Toggle - Compact
+        theme_icon = "☀️" if st.session_state.dark_mode else "🌙"
+        if st.button(theme_icon, use_container_width=True, key="theme_toggle", help="Toggle Theme"):
+            toggle_theme()
+            st.rerun()
+        
+        # Chat History Section - Compact
+        st.markdown("💬", help="Session History")
+        
+        if len(st.session_state.messages) > 0:
+            st.markdown("**Recent Conversations:**")
+            
+            # Create scrollable chat history preview
+            st.markdown("""
+            <div style="
+                max-height: 200px;
+                overflow-y: auto;
+                background: rgba(139, 69, 19, 0.05);
+                border-radius: 10px;
+                padding: 10px;
+                margin: 10px 0;
+            ">
+            """, unsafe_allow_html=True)
+            
+            # Display conversation previews
+            recent_messages = st.session_state.messages[-8:] if len(st.session_state.messages) > 8 else st.session_state.messages
+            
+            for i, msg in enumerate(recent_messages):
+                if msg["role"] == "user":
+                    preview = msg["content"][:45] + "..." if len(msg["content"]) > 45 else msg["content"]
+                    st.markdown(f"👤 **You:** {preview}")
+                else:
+                    preview = msg["content"][:45] + "..." if len(msg["content"]) > 45 else msg["content"]
+                    st.markdown(f"🤖 **AI:** {preview}")
+            
+            st.markdown("</div>", unsafe_allow_html=True)
+            
+            # Session Statistics
+            st.markdown("### 📊 Session Analytics")
+            user_count = len([msg for msg in st.session_state.messages if msg["role"] == "user"])
+            bot_count = len([msg for msg in st.session_state.messages if msg["role"] == "assistant"])
+            
+            col1, col2 = st.columns(2)
+            with col1:
+                st.metric("Questions", user_count, delta=None)
+            with col2:
+                st.metric("Responses", bot_count, delta=None)
+                
+            # Export and Clear Options
+            st.markdown("### ⚙️ Session Controls")
+            
+            col1, col2 = st.columns(2)
+            with col1:
+                chat_export = export_chat_history()
+                if chat_export:
+                    st.download_button(
+                        label="📥 Export Chat",
+                        data=chat_export,
+                        file_name=f"chat_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}.json",
+                        mime="application/json",
+                        use_container_width=True
+                    )
+            
+            with col2:
+                if st.button("🗑️ Clear", use_container_width=True, type="secondary"):
+                    st.session_state.messages = []
+                    st.rerun()
+        else:
+            st.markdown("""
+            <div style="
+                text-align: center;
+                padding: 20px;
+                background: rgba(139, 69, 19, 0.05);
+                border-radius: 10px;
+                color: #8B7355;
+                font-style: italic;
+            ">
+                No conversations yet.<br>Start chatting to see history here!
+            </div>
+            """, unsafe_allow_html=True)
+
+def main():
+    """Main application function"""
+    init_session_state()
+    
+    # Apply custom CSS
+    st.markdown(get_custom_css(st.session_state.dark_mode), unsafe_allow_html=True)
+    
+    # Render the professional sidebar
+    render_professional_sidebar()
+    
+    # Remove hamburger button since sidebar is now stationary
+    # Sidebar is now permanently visible and fixed width
+
+    # Main Interface with Professional Design - Adjusted for Stationary Sidebar
+    st.markdown("""
+    <div style="margin-top: 20px;">
+        <div style="
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.05), rgba(210, 105, 30, 0.05));
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 2px solid rgba(139, 69, 19, 0.1);
+        ">
+            <h1 style="
+                color: #8B4513;
+                font-family: 'Orbitron', sans-serif;
+                font-weight: 900;
+                font-size: 2.5rem;
+                margin-bottom: 15px;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+                background: linear-gradient(135deg, #8B4513, #D2691E);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                letter-spacing: 2px;
+            ">AI KNOWLEDGE ASSISTANT</h1>
+            <p style="
+                color: #8B7355;
+                font-size: 1.1rem;
+                margin-bottom: 10px;
+                font-weight: 500;
+            ">Professional AI-Powered Chat Interface</p>
+            <p style="
+                color: #CD853F;
+                font-size: 0.9rem;
+                font-style: italic;
+                opacity: 0.8;
+            ">Powered by AWS Bedrock • Claude 3.7 Sonnet</p>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Check if Bedrock client is available
+    if st.session_state.bedrock_client is None:
+        st.error("❌ Unable to connect to AWS Bedrock. Please check your credentials and try again.")
+        return
+    
+    # Test connection and show available models
+    with st.expander("🔧 Connection Status", expanded=False):
+        if st.button("Test AWS Connection"):
+            success, message = st.session_state.bedrock_client.test_connection()
+            if success:
+                st.success(message)
+            else:
+                st.error(message)
+        
+        # Simple direct model list for debugging
+        if st.button("Show All Models (Debug)"):
+            try:
+                import boto3
+                bedrock = boto3.client('bedrock', region_name='us-east-1')
+                response = bedrock.list_foundation_models()
+                models = [m['modelId'] for m in response.get('modelSummaries', [])]
+                
+                claude_models = [m for m in models if 'claude' in m.lower()]
+                st.write(f"Found {len(claude_models)} Claude models:")
+                for model in claude_models:
+                    st.code(model)
+                    
+                if not claude_models:
+                    st.write("First 20 models:")
+                    for model in sorted(models)[:20]:
+                        st.write(f"• {model}")
+            except Exception as e:
+                st.error(f"Error: {e}")
+    
+    # Chat history display
+    chat_container = st.container()
+    
+    with chat_container:
+        for message in st.session_state.messages:
+            display_message(message, message["role"] == "user")
+    
+    # Chat input - hide completely when generating response
+    is_generating = st.session_state.get("generating_response", False)
+    
+    if not is_generating:
+        # Show input form when not generating
+        with st.form(key="chat_form", clear_on_submit=True):
+            col1, col2 = st.columns([4, 1])
+            
+            with col1:
+                user_input = st.text_input(
+                    "Type your message here...",
+                    placeholder="Ask me anything...",
+                    key="user_input",
+                    label_visibility="collapsed"
+                )
+            
+            with col2:
+                submit_button = st.form_submit_button("Send 📤", use_container_width=True)
+    else:
+        # Hide input completely when generating - no message box
+        submit_button = False
+        user_input = ""
+    
+    # Process user input
+    if submit_button and user_input:
+        # Add user message to chat history IMMEDIATELY
+        user_message = {
+            "role": "user",
+            "content": user_input,
+            "timestamp": format_timestamp()
+        }
+        st.session_state.messages.append(user_message)
+        
+        # Rerun to show user message immediately
+        st.rerun()
+
+    # Check if we need to generate a response (last message is from user)
+    if (st.session_state.messages and 
+        st.session_state.messages[-1]["role"] == "user" and 
+        not st.session_state.get("generating_response", False)):
+        
+        # Set flag to prevent multiple generations and hide input
+        st.session_state.generating_response = True
+        st.rerun()  # Rerun to hide input immediately
+        
+    # Generate response if flag is set
+    if st.session_state.get("generating_response", False):
+        # Get the last user message
+        last_user_message = st.session_state.messages[-1]["content"]
+        
+        # Show typing indicator
+        with st.spinner("🤔 Thinking..."):
+            try:
+                # Get response from Bedrock
+                response = st.session_state.bedrock_client.query_knowledge_base(last_user_message)
+                
+                if response:
+                    # Add bot response to chat history
+                    bot_message = {
+                        "role": "assistant",
+                        "content": response,
+                        "timestamp": format_timestamp()
+                    }
+                    st.session_state.messages.append(bot_message)
+                else:
+                    # Handle empty response
+                    error_message = {
+                        "role": "assistant",
+                        "content": "I apologize, but I couldn't find relevant information in the knowledge base. Could you try rephrasing your question?",
+                        "timestamp": format_timestamp()
+                    }
+                    st.session_state.messages.append(error_message)
+                    
+            except Exception as e:
+                # Handle API errors
+                error_message = {
+                    "role": "assistant",
+                    "content": f"Sorry, I encountered an error while processing your request: {str(e)}",
+                    "timestamp": format_timestamp()
+                }
+                st.session_state.messages.append(error_message)
+        
+        # Clear generation flag and rerun to show input again
+        st.session_state.generating_response = False
+        st.rerun()
+
+if __name__ == "__main__":
+    main()

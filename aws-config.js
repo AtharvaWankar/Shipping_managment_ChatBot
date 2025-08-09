@@ -79,11 +79,11 @@ class AWSConfig {
         try {
             console.log('Querying knowledge base with prompt:', prompt);
             
-            // Try multiple model options like your Python code does
+            // Try correct inference profile formats for Claude 3.7 Sonnet
             const modelOptions = [
-                'arn:aws:bedrock:us-east-1::inference-profile/us.anthropic.claude-3-7-sonnet-20250219-v1:0',
-                'anthropic.claude-3-7-sonnet-20250219-v1:0',
-                'anthropic.claude-3-5-sonnet-20241022-v2:0'
+                'us.anthropic.claude-3-7-sonnet-20250219-v1:0',
+                'arn:aws:bedrock:us-east-1:123456789012:inference-profile/us.anthropic.claude-3-7-sonnet-20250219-v1:0',
+                'anthropic.claude-3-7-sonnet-20250219-v1:0'
             ];
 
             let lastError = null;
