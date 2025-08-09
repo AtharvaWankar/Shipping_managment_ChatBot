@@ -9,7 +9,7 @@ class AWSConfig {
         this.region = 'us-east-1';
         this.bedrockAgentClient = null;
         this.s3Client = null;
-        this.bucketName = 'chat-history';
+        this.bucketName = 'bedrock-chat-history-' + Date.now().toString().slice(-8);
         // Try inference profile first, fallback to direct model ID
         this.modelArn = 'arn:aws:bedrock:us-east-1::inference-profile/us.anthropic.claude-3-7-sonnet-20250219-v1:0';
         this.knowledgeBaseId = 'P33K9CRFWL';
@@ -56,16 +56,28 @@ class AWSConfig {
     // Ensure the chat history bucket exists
     async ensureBucketExists() {
         try {
-            const createBucketCommand = new CreateBucketCommand({
+            // For us-east-1, don't specify LocationConstraint
+            const createBucketParams = {
                 Bucket: this.bucketName
-            });
+            };
             
+            const createBucketCommand = new CreateBucketCommand(createBucketParams);
             await this.s3Client.send(createBucketCommand);
-            console.log(`Bucket ${this.bucketName} created successfully`);
+            console.log(`S3 bucket ${this.bucketName} created successfully`);
+            return true;
         } catch (error) {
-            // Bucket might already exist
-            if (error.name !== 'BucketAlreadyOwnedByYou' && error.name !== 'BucketAlreadyExists') {
-                console.error('Error creating bucket:', error);
+            // Handle various bucket creation scenarios
+            if (error.name === 'BucketAlreadyOwnedByYou' || 
+                error.name === 'BucketAlreadyExists' ||
+                error.Code === 'BucketAlreadyOwnedByYou') {
+                console.log(`S3 bucket ${this.bucketName} already exists`);
+                return true;
+            } else if (error.name === 'AccessDenied' || error.Code === 'AccessDenied') {
+                console.warn('S3 bucket creation denied - using localStorage fallback');
+                return false;
+            } else {
+                console.error('S3 bucket creation failed:', error.message);
+                return false;
             }
         }
     }
