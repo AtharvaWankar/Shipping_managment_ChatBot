@@ -33,10 +33,16 @@ class AWSConfig {
                 credentials: credentials,
             });
 
-            // Initialize S3 client
+            // Initialize S3 client with CORS configuration
             this.s3Client = new S3Client({
                 region: this.region,
                 credentials: credentials,
+                forcePathStyle: true,
+                useAccelerateEndpoint: false,
+                requestHandler: {
+                    requestTimeout: 10000,
+                    httpsAgent: false
+                }
             });
 
             // Using existing bucket chat-history-1512
@@ -52,7 +58,7 @@ class AWSConfig {
         }
     }
 
-    // Check if the chat history bucket exists
+    // Check if the chat history bucket exists and is accessible
     async ensureBucketExists() {
         try {
             // Test if we can access the bucket by attempting to list objects
@@ -60,12 +66,16 @@ class AWSConfig {
                 Bucket: this.bucketName,
                 MaxKeys: 1
             });
-            await this.s3Client.send(command);
+            const response = await this.s3Client.send(command);
             console.log(`S3 bucket ${this.bucketName} is accessible`);
             return true;
         } catch (error) {
-            console.error('S3 bucket access failed:', error.message);
-            console.warn('Using localStorage fallback for chat history');
+            if (error.name === 'NetworkingError' || error.message.includes('Failed to fetch')) {
+                console.error('CORS error accessing S3 bucket. Browser cannot directly access S3 due to CORS restrictions.');
+                console.warn('Chat history will be saved to localStorage only.');
+            } else {
+                console.error('S3 bucket access failed:', error.message);
+            }
             return false;
         }
     }
@@ -137,30 +147,35 @@ class AWSConfig {
         return cleanParagraphs.join('\n\n');
     }
 
-    // Save chat session to S3
+    // Save chat session to S3 (with CORS fallback)
     async saveChatSession(sessionId, messages) {
+        const sessionData = {
+            sessionId: sessionId,
+            timestamp: new Date().toISOString(),
+            messages: messages
+        };
+
+        // Always save to localStorage first as backup
+        try {
+            localStorage.setItem(`chat_${sessionId}`, JSON.stringify(sessionData));
+            console.log(`Chat session ${sessionId} saved to localStorage`);
+        } catch (localError) {
+            console.error('Error saving chat session locally:', localError);
+        }
+
+        // Try S3 only if initialized
         if (!this.initialized) {
-            // Fallback to localStorage if S3 not available
-            try {
-                const sessionData = {
-                    sessionId: sessionId,
-                    timestamp: new Date().toISOString(),
-                    messages: messages
-                };
-                localStorage.setItem(`chat_${sessionId}`, JSON.stringify(sessionData));
-                console.log(`Chat session ${sessionId} saved locally`);
-            } catch (error) {
-                console.error('Error saving chat session locally:', error);
-            }
+            console.log('AWS not initialized, using localStorage only');
             return;
         }
 
         try {
-            const sessionData = {
-                sessionId: sessionId,
-                timestamp: new Date().toISOString(),
-                messages: messages
-            };
+            // Check if S3 is accessible first
+            const bucketAccessible = await this.ensureBucketExists();
+            if (!bucketAccessible) {
+                console.log('S3 not accessible due to CORS, using localStorage only');
+                return;
+            }
 
             // Create organized folder structure by date
             const now = new Date();
@@ -172,24 +187,20 @@ class AWSConfig {
                 Bucket: this.bucketName,
                 Key: `${year}/${month}/${day}/${sessionId}.json`,
                 Body: JSON.stringify(sessionData, null, 2),
-                ContentType: 'application/json'
+                ContentType: 'application/json',
+                Metadata: {
+                    'session-id': sessionId,
+                    'chat-app': 'professional-chatbot'
+                }
             });
 
             await this.s3Client.send(command);
-            console.log(`Chat session ${sessionId} saved to S3`);
+            console.log(`Chat session ${sessionId} saved to S3 successfully`);
         } catch (error) {
-            console.error('Error saving chat session to S3:', error);
-            // Fallback to localStorage
-            try {
-                const sessionData = {
-                    sessionId: sessionId,
-                    timestamp: new Date().toISOString(),
-                    messages: messages
-                };
-                localStorage.setItem(`chat_${sessionId}`, JSON.stringify(sessionData));
-                console.log(`Chat session ${sessionId} saved locally as fallback`);
-            } catch (localError) {
-                console.error('Error saving chat session locally:', localError);
+            if (error.name === 'NetworkingError' || error.message.includes('Failed to fetch')) {
+                console.log('CORS prevented S3 access - chat saved to localStorage only');
+            } else {
+                console.error('S3 save failed:', error.message);
             }
         }
     }
