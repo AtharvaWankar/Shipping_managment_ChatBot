@@ -10,7 +10,7 @@ class AWSConfig {
         this.bedrockClient = null;
         this.s3Client = null;
         this.bucketName = 'chat-history';
-        this.modelId = 'us.anthropic.claude-3-5-sonnet-20241022-v2:0';
+        this.modelId = 'anthropic.claude-3-5-sonnet-20241022-v2:0';
         this.knowledgeBaseId = 'P33K9CRFWL';
         this.initialized = false;
         
