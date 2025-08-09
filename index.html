@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- AWS SDK v3 -->
+    <script type="importmap">
+    {
+        "imports": {
+            "@aws-sdk/client-bedrock-runtime": "https://cdn.skypack.dev/@aws-sdk/client-bedrock-runtime",
+            "@aws-sdk/client-s3": "https://cdn.skypack.dev/@aws-sdk/client-s3"
+        }
+    }
+    </script>
+    <!-- Feather Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</head>
+<body>
+    <!-- Hamburger Menu Button -->
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu">
+        <i data-feather="menu"></i>
+    </button>
+
+    <!-- Side Panel -->
+    <div class="side-panel" id="sidePanel">
+        <div class="side-panel-header">
+            <h3>Settings</h3>
+            <button class="close-btn" id="closePanelBtn" aria-label="Close panel">
+                <i data-feather="x"></i>
+            </button>
+        </div>
+        
+        <div class="side-panel-content">
+            <!-- Model Information -->
+            <div class="panel-section">
+                <h4>Current Model</h4>
+                <div class="model-info">
+                    <span class="model-name">Claude Sonnet 3.7</span>
+                    <span class="model-status">Active</span>
+                </div>
+            </div>
+
+            <!-- Theme Toggle -->
+            <div class="panel-section">
+                <h4>Theme</h4>
+                <div class="theme-toggle">
+                    <button class="theme-btn" id="themeToggle">
+                        <i data-feather="sun" class="theme-icon light-icon"></i>
+                        <i data-feather="moon" class="theme-icon dark-icon"></i>
+                        <span class="theme-text">Light Mode</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chat History -->
+            <div class="panel-section">
+                <div class="section-header">
+                    <h4>Chat History</h4>
+                    <button class="clear-all-btn" id="clearAllBtn" title="Clear all chat history">
+                        <i data-feather="trash-2"></i>
+                    </button>
+                </div>
+                <div class="chat-history-list" id="chatHistoryList">
+                    <div class="no-history">No chat history available</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Chat Container -->
+        <div class="chat-container">
+            <div class="chat-header">
+                <h1>Professional Chatbot</h1>
+                <p>Powered by AWS Bedrock Claude Sonnet 3.7</p>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="welcome-message">
+                    <div class="welcome-icon">
+                        <i data-feather="message-circle"></i>
+                    </div>
+                    <h2>Welcome to your AI Assistant</h2>
+                    <p>Start a conversation by typing a message below.</p>
+                </div>
+            </div>
+
+            <!-- Typing Indicator -->
+            <div class="typing-indicator" id="typingIndicator">
+                <div class="typing-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <span class="typing-text">AI is thinking...</span>
+            </div>
+        </div>
+
+        <!-- Input Container -->
+        <div class="input-container" id="inputContainer">
+            <div class="input-wrapper">
+                <input 
+                    type="text" 
+                    id="messageInput" 
+                    placeholder="Type your message here..." 
+                    maxlength="2000"
+                    autocomplete="off"
+                >
+                <button class="send-btn" id="sendBtn" aria-label="Send message">
+                    <i data-feather="send"></i>
+                </button>
+            </div>
+            <div class="input-footer">
+                <span class="char-count" id="charCount">0/2000</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error Toast -->
+    <div class="error-toast" id="errorToast">
+        <div class="error-content">
+            <i data-feather="alert-circle"></i>
+            <span class="error-message"></span>
+        </div>
+        <button class="error-close" aria-label="Close error">
+            <i data-feather="x"></i>
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="aws-config.js"></script>
+    <script type="module" src="theme-manager.js"></script>
+    <script type="module" src="chat-manager.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
