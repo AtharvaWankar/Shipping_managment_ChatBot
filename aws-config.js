@@ -51,7 +51,7 @@ class AWSConfig {
         }
     }
 
-    // Invoke Claude model via AWS Bedrock
+    // Invoke Claude model via AWS Bedrock using custom service definition
     async invokeClaude(prompt, maxTokens = 4000) {
         if (!this.initialized) {
             throw new Error('AWS services not initialized. Call initialize() first.');
@@ -60,13 +60,7 @@ class AWSConfig {
         try {
             console.log('Invoking Claude with prompt:', prompt);
             
-            // Create Bedrock Runtime client
-            const bedrockRuntime = new AWS.BedrockRuntime({
-                region: this.region,
-                accessKeyId: this.accessKeyId,
-                secretAccessKey: this.secretAccessKey
-            });
-
+            // Create the request body for Claude
             const requestBody = {
                 anthropic_version: "bedrock-2023-05-31",
                 max_tokens: maxTokens,
@@ -77,6 +71,65 @@ class AWSConfig {
                     }
                 ]
             };
+
+            // Create a custom Bedrock Runtime service since it's not in SDK v2
+            const BedrockRuntime = AWS.Service.defineService('bedrockruntime', ['2023-09-30'], {
+                endpointPrefix: 'bedrock-runtime',
+                protocol: 'rest-json',
+                serviceFullName: 'Amazon Bedrock Runtime',
+                serviceId: 'Bedrock Runtime',
+                signatureVersion: 'v4',
+                uid: 'bedrock-runtime-2023-09-30',
+                operations: {
+                    invokeModel: {
+                        http: {
+                            method: 'POST',
+                            requestUri: '/model/{modelId}/invoke'
+                        },
+                        input: {
+                            type: 'structure',
+                            required: ['modelId', 'body'],
+                            members: {
+                                modelId: {
+                                    location: 'uri',
+                                    locationName: 'modelId'
+                                },
+                                contentType: {
+                                    location: 'header',
+                                    locationName: 'Content-Type'
+                                },
+                                accept: {
+                                    location: 'header',
+                                    locationName: 'Accept'
+                                },
+                                body: {
+                                    type: 'blob'
+                                }
+                            }
+                        },
+                        output: {
+                            type: 'structure',
+                            required: ['body'],
+                            members: {
+                                body: {
+                                    type: 'blob'
+                                },
+                                contentType: {
+                                    location: 'header',
+                                    locationName: 'Content-Type'
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Create client instance
+            const bedrockRuntime = new BedrockRuntime({
+                region: this.region,
+                accessKeyId: this.accessKeyId,
+                secretAccessKey: this.secretAccessKey
+            });
 
             const params = {
                 modelId: this.modelId,
