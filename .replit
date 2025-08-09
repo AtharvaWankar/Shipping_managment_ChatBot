@@ -6,7 +6,7 @@ expertMode = true
 channel = "stable-25_05"
 
 [workflows]
-runButton = "Web Server"
+runButton = "Start Chatbot"
 
 [[workflows.workflow]]
 name = "Project"
@@ -116,6 +116,99 @@ args = "        httpd.serve_forever()"
 task = "shell.exec"
 args = "\""
 
+[[workflows.workflow]]
+name = "Start Chatbot"
+author = 46199693
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python -c \""
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "import http.server"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "import socketserver"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "import os"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = ""
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "def start_server(port):"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "    try:"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "        Handler = http.server.SimpleHTTPRequestHandler"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "        with socketserver.TCPServer(('0.0.0.0', port), Handler) as httpd:"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "            print(f'Professional Chatbot running at http://0.0.0.0:{port}/')"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "            print(f'Access your chatbot via the Replit webview or external URL')"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "            httpd.serve_forever()"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "    except OSError as e:"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "        if 'Address already in use' in str(e):"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "            print(f'Port {port} is busy, trying port {port + 1000}...')"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "            return start_server(port + 1000)"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "        else:"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "            raise e"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = ""
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "start_server(5000)"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "\""
+
 [[ports]]
 localPort = 5000
 externalPort = 80
+
+[[ports]]
+localPort = 8000
+externalPort = 8000
