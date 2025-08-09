@@ -158,25 +158,18 @@ class AWSConfig {
         // Always save to localStorage first as backup
         try {
             localStorage.setItem(`chat_${sessionId}`, JSON.stringify(sessionData));
-            console.log(`Chat session ${sessionId} saved to localStorage`);
+            console.log(`✅ Chat session ${sessionId} saved to localStorage`);
         } catch (localError) {
-            console.error('Error saving chat session locally:', localError);
+            console.error('❌ Error saving chat session locally:', localError);
         }
 
         // Try S3 only if initialized
         if (!this.initialized) {
-            console.log('AWS not initialized, using localStorage only');
-            return;
+            console.warn('⚠️  AWS not initialized, using localStorage only');
+            return { success: false, reason: 'AWS not initialized' };
         }
 
         try {
-            // Check if S3 is accessible first
-            const bucketAccessible = await this.ensureBucketExists();
-            if (!bucketAccessible) {
-                console.log('S3 not accessible due to CORS, using localStorage only');
-                return;
-            }
-
             // Create organized folder structure by date
             const now = new Date();
             const year = now.getFullYear();
@@ -195,12 +188,18 @@ class AWSConfig {
             });
 
             await this.s3Client.send(command);
-            console.log(`Chat session ${sessionId} saved to S3 successfully`);
+            console.log(`✅ Chat session ${sessionId} saved to S3 successfully!`);
+            return { success: true, location: 'S3 and localStorage' };
+            
         } catch (error) {
             if (error.name === 'NetworkingError' || error.message.includes('Failed to fetch')) {
-                console.log('CORS prevented S3 access - chat saved to localStorage only');
+                console.warn('🚫 CORS Error: Cannot access S3 directly from browser');
+                console.warn('💡 To fix: Add CORS configuration to your S3 bucket');
+                console.warn('📍 Chat history saved to localStorage only');
+                return { success: false, reason: 'CORS restriction' };
             } else {
-                console.error('S3 save failed:', error.message);
+                console.error('❌ S3 save failed:', error.message);
+                return { success: false, reason: error.message };
             }
         }
     }
