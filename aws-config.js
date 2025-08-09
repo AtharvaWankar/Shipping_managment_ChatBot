@@ -1,6 +1,6 @@
 // AWS Configuration and Service Initialization using AWS SDK v3
 import { BedrockAgentRuntimeClient, RetrieveAndGenerateCommand } from '@aws-sdk/client-bedrock-agent-runtime';
-import { S3Client, CreateBucketCommand, PutObjectCommand, ListObjectsV2Command, DeleteObjectCommand, GetObjectCommand } from '@aws-sdk/client-s3';
+import { S3Client, PutObjectCommand, ListObjectsV2Command, DeleteObjectCommand, GetObjectCommand } from '@aws-sdk/client-s3';
 
 class AWSConfig {
     constructor() {
@@ -9,7 +9,7 @@ class AWSConfig {
         this.region = 'us-east-1';
         this.bedrockAgentClient = null;
         this.s3Client = null;
-        this.bucketName = 'bedrock-chat-history-' + Date.now().toString().slice(-8);
+        this.bucketName = 'chat-history-1512';
         // Try inference profile first, fallback to direct model ID
         this.modelArn = 'arn:aws:bedrock:us-east-1::inference-profile/us.anthropic.claude-3-7-sonnet-20250219-v1:0';
         this.knowledgeBaseId = 'P33K9CRFWL';
@@ -39,8 +39,7 @@ class AWSConfig {
                 credentials: credentials,
             });
 
-            // Create chat history bucket if it doesn't exist
-            await this.ensureBucketExists();
+            // Using existing bucket chat-history-1512
             
             this.initialized = true;
             console.log('AWS services initialized successfully');
@@ -53,32 +52,21 @@ class AWSConfig {
         }
     }
 
-    // Ensure the chat history bucket exists
+    // Check if the chat history bucket exists
     async ensureBucketExists() {
         try {
-            // For us-east-1, don't specify LocationConstraint
-            const createBucketParams = {
-                Bucket: this.bucketName
-            };
-            
-            const createBucketCommand = new CreateBucketCommand(createBucketParams);
-            await this.s3Client.send(createBucketCommand);
-            console.log(`S3 bucket ${this.bucketName} created successfully`);
+            // Test if we can access the bucket by attempting to list objects
+            const command = new ListObjectsV2Command({
+                Bucket: this.bucketName,
+                MaxKeys: 1
+            });
+            await this.s3Client.send(command);
+            console.log(`S3 bucket ${this.bucketName} is accessible`);
             return true;
         } catch (error) {
-            // Handle various bucket creation scenarios
-            if (error.name === 'BucketAlreadyOwnedByYou' || 
-                error.name === 'BucketAlreadyExists' ||
-                error.Code === 'BucketAlreadyOwnedByYou') {
-                console.log(`S3 bucket ${this.bucketName} already exists`);
-                return true;
-            } else if (error.name === 'AccessDenied' || error.Code === 'AccessDenied') {
-                console.warn('S3 bucket creation denied - using localStorage fallback');
-                return false;
-            } else {
-                console.error('S3 bucket creation failed:', error.message);
-                return false;
-            }
+            console.error('S3 bucket access failed:', error.message);
+            console.warn('Using localStorage fallback for chat history');
+            return false;
         }
     }
 
@@ -174,9 +162,15 @@ class AWSConfig {
                 messages: messages
             };
 
+            // Create organized folder structure by date
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            
             const command = new PutObjectCommand({
                 Bucket: this.bucketName,
-                Key: `${sessionId}.json`,
+                Key: `${year}/${month}/${day}/${sessionId}.json`,
                 Body: JSON.stringify(sessionData, null, 2),
                 ContentType: 'application/json'
             });
@@ -204,13 +198,35 @@ class AWSConfig {
     async loadChatSession(sessionId) {
         try {
             if (this.initialized && this.s3Client) {
-                const command = new GetObjectCommand({
-                    Bucket: this.bucketName,
-                    Key: `${sessionId}.json`
-                });
-                const response = await this.s3Client.send(command);
-                const body = await response.Body.transformToString();
-                return JSON.parse(body);
+                // Try to find the session by searching through date folders
+                try {
+                    const listCommand = new ListObjectsV2Command({
+                        Bucket: this.bucketName,
+                        Prefix: '',
+                        Delimiter: '/'
+                    });
+                    
+                    // Search for the session file
+                    const allObjects = await this.s3Client.send(new ListObjectsV2Command({
+                        Bucket: this.bucketName
+                    }));
+                    
+                    const sessionFile = allObjects.Contents?.find(obj => 
+                        obj.Key?.includes(`${sessionId}.json`)
+                    );
+                    
+                    if (sessionFile) {
+                        const command = new GetObjectCommand({
+                            Bucket: this.bucketName,
+                            Key: sessionFile.Key
+                        });
+                        const response = await this.s3Client.send(command);
+                        const body = await response.Body.transformToString();
+                        return JSON.parse(body);
+                    }
+                } catch (searchError) {
+                    console.log('S3 search failed:', searchError.message);
+                }
             }
         } catch (error) {
             console.log('S3 load failed, trying localStorage:', error.message);
@@ -240,13 +256,18 @@ class AWSConfig {
                 
                 if (response.Contents) {
                     for (const object of response.Contents) {
-                        const sessionId = object.Key.replace('.json', '');
-                        sessions.push({
-                            sessionId: sessionId,
-                            lastModified: object.LastModified,
-                            size: object.Size,
-                            source: 'S3'
-                        });
+                        if (object.Key?.endsWith('.json')) {
+                            // Extract session ID from path like "2025/08/09/chat_20250809_213122.json"
+                            const sessionId = object.Key.split('/').pop()?.replace('.json', '');
+                            if (sessionId) {
+                                sessions.push({
+                                    sessionId: sessionId,
+                                    lastModified: object.LastModified,
+                                    size: object.Size,
+                                    source: 'S3'
+                                });
+                            }
+                        }
                     }
                 }
             } catch (error) {
@@ -283,12 +304,23 @@ class AWSConfig {
     async deleteChatSession(sessionId) {
         try {
             if (this.initialized && this.s3Client) {
-                const command = new DeleteObjectCommand({
-                    Bucket: this.bucketName,
-                    Key: `${sessionId}.json`
-                });
-                await this.s3Client.send(command);
-                console.log(`Chat session ${sessionId} deleted from S3`);
+                // Find and delete the session file
+                const allObjects = await this.s3Client.send(new ListObjectsV2Command({
+                    Bucket: this.bucketName
+                }));
+                
+                const sessionFile = allObjects.Contents?.find(obj => 
+                    obj.Key?.includes(`${sessionId}.json`)
+                );
+                
+                if (sessionFile) {
+                    const command = new DeleteObjectCommand({
+                        Bucket: this.bucketName,
+                        Key: sessionFile.Key
+                    });
+                    await this.s3Client.send(command);
+                    console.log(`Chat session ${sessionId} deleted from S3`);
+                }
             }
         } catch (error) {
             console.log('S3 delete failed:', error.message);
