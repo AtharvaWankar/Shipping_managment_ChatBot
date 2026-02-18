@@ -1,0 +1,52 @@
+Customer Address Details
+
+The address type is "shipping" with street "985 Oak St", city "Houston", state "NY", and zip code "16535" for user ID "U500" and user/customer name "Aarav Nair".
+The address type is "billing" with street "819 Oak St", city "Phoenix", state "TX", and zip code "19443" for user ID "U501" and user/customer name "Anaya Joshi".
+The address type is "billing" with street "628 Oak St", city "Houston", state "CA", and zip code "14517" for user ID "U502" and user/customer name "Ayaan Reddy".
+The address type is "shipping" with street "303 Oak St", city "Los Angeles", state "CA", and zip code "87855" for user ID "U503" and user/customer name "Vivaan Mehta".
+The address type is "shipping" with street "237 Oak St", city "Houston", state "CA", and zip code "83725" for user ID "U504" and user/customer name "Sai Joshi".
+The address type is "billing" with street "160 Broadway", city "Houston", state "TX", and zip code "56802" for user ID "U505" and user/customer name "Sai Reddy".
+The address type is "shipping" with street "573 1st Ave", city "Phoenix", state "CA", and zip code "15375" for user ID "U506" and user/customer name "Vivaan Joshi".
+The address type is "billing" with street "234 Main St", city "Chicago", state "TX", and zip code "82745" for user ID "U507" and user/customer name "Diya Kumar".
+The address type is "billing" with street "783 1st Ave", city "Houston", state "NY", and zip code "66829" for user ID "U508" and user/customer name "Myra Sharma".
+The address type is "billing" with street "902 1st Ave", city "Houston", state "CA", and zip code "32860" for user ID "U509" and user/customer name "Sai Patel".
+The address type is "billing" with street "499 Oak St", city "Phoenix", state "IL", and zip code "64567" for user ID "U510" and user/customer name "Anika Verma".
+The address type is "billing" with street "473 Oak St", city "Houston", state "NY", and zip code "55274" for user ID "U511" and user/customer name "Arjun Reddy".
+The address type is "billing" with street "911 1st Ave", city "New York", state "AZ", and zip code "52717" for user ID "U512" and user/customer name "Anika Kapoor".
+The address type is "shipping" with street "362 Maple Rd", city "New York", state "TX", and zip code "77457" for user ID "U513" and user/customer name "Diya Kumar".
+The address type is "shipping" with street "905 Broadway", city "Chicago", state "CA", and zip code "32469" for user ID "U514" and user/customer name "Avni Reddy".
+The address type is "billing" with street "309 Main St", city "Los Angeles", state "CA", and zip code "89326" for user ID "U515" and user/customer name "Anika Reddy".
+The address type is "shipping" with street "812 1st Ave", city "Houston", state "AZ", and zip code "90729" for user ID "U516" and user/customer name "Avni Gupta".
+The address type is "billing" with street "217 Main St", city "Los Angeles", state "NY", and zip code "74613" for user ID "U517" and user/customer name "Siya Kumar".
+The address type is "shipping" with street "993 1st Ave", city "New York", state "IL", and zip code "86598" for user ID "U518" and user/customer name "Myra Patel".
+The address type is "shipping" with street "197 Oak St", city "Phoenix", state "TX", and zip code "78547" for user ID "U519" and user/customer name "Vivaan Nair".
+The address type is "billing" with street "379 Maple Rd", city "Houston", state "TX", and zip code "95388" for user ID "U520" and user/customer name "Meera Gupta".
+The address type is "billing" with street "145 Main St", city "Chicago", state "AZ", and zip code "46239" for user ID "U521" and user/customer name "Sai Joshi".
+The address type is "billing" with street "510 Main St", city "Chicago", state "TX", and zip code "12568" for user ID "U522" and user/customer name "Aadhya Mehta".
+The address type is "billing" with street "498 Main St", city "Phoenix", state "NY", and zip code "48028" for user ID "U523" and user/customer name "Arjun Reddy".
+The address type is "billing" with street "768 Oak St", city "Chicago", state "TX", and zip code "17454" for user ID "U524" and user/customer name "Anaya Verma".
+The address type is "billing" with street "271 Oak St", city "Los Angeles", state "TX", and zip code "62309" for user ID "U525" and user/customer name "Myra Gupta".
+The address type is "shipping" with street "797 Main St", city "New York", state "CA", and zip code "69330" for user ID "U526" and user/customer name "Anaya Kumar".
+The address type is "shipping" with street "188 1st Ave", city "New York", state "NY", and zip code "30653" for user ID "U527" and user/customer name "Saanvi Sharma".
+The address type is "billing" with street "870 Broadway", city "Los Angeles", state "NY", and zip code "27898" for user ID "U528" and user/customer name "Anika Mehta".
+The address type is "shipping" with street "492 Maple Rd", city "New York", state "IL", and zip code "30955" for user ID "U529" and user/customer name "Aditya Joshi".
+The address type is "billing" with street "846 Oak St", city "New York", state "NY", and zip code "24006" for user ID "U530" and user/customer name "Vivaan Joshi".
+The address type is "billing" with street "407 Maple Rd", city "Los Angeles", state "IL", and zip code "23690" for user ID "U531" and user/customer name "Arjun Gupta".
+The address type is "shipping" with street "444 Broadway", city "Los Angeles", state "NY", and zip code "25099" for user ID "U532" and user/customer name "Anaya Joshi".
+The address type is "shipping" with street "939 Maple Rd", city "Chicago", state "AZ", and zip code "67110" for user ID "U533" and user/customer name "Priya Mehta".
+The address type is "shipping" with street "390 Maple Rd", city "Los Angeles", state "NY", and zip code "18376" for user ID "U534" and user/customer name "Sai Reddy".
+The address type is "billing" with street "933 Broadway", city "Los Angeles", state "NY", and zip code "71510" for user ID "U535" and user/customer name "Saanvi Gupta".
+The address type is "shipping" with street "405 Oak St", city "Los Angeles", state "CA", and zip code "55155" for user ID "U536" and user/customer name "Anika Patel".
+The address type is "shipping" with street "637 Maple Rd", city "Chicago", state "NY", and zip code "70588" for user ID "U537" and user/customer name "Aditya Reddy".
+The address type is "shipping" with street "836 Oak St", city "Chicago", state "IL", and zip code "95358" for user ID "U538" and user/customer name "Arjun Reddy".
+The address type is "shipping" with street "317 Main St", city "Los Angeles", state "IL", and zip code "70882" for user ID "U539" and user/customer name "Meera Reddy".
+The address type is "billing" with street "232 Broadway", city "Houston", state "NY", and zip code "70421" for user ID "U540" and user/customer name "Vivaan Kumar".
+The address type is "shipping" with street "506 Maple Rd", city "Chicago", state "TX", and zip code "97415" for user ID "U541" and user/customer name "Saanvi Kapoor".
+The address type is "billing" with street "659 Maple Rd", city "New York", state "IL", and zip code "95598" for user ID "U542" and user/customer name "Siya Reddy".
+The address type is "billing" with street "713 Maple Rd", city "Los Angeles", state "AZ", and zip code "37818" for user ID "U543" and user/customer name "Ayaan Patel".
+The address type is "shipping" with street "508 Maple Rd", city "Houston", state "IL", and zip code "12988" for user ID "U544" and user/customer name "Diya Joshi".
+The address type is "billing" with street "720 Oak St", city "Houston", state "TX", and zip code "51624" for user ID "U545" and user/customer name "Vihaan Kapoor".
+The address type is "billing" with street "326 Main St", city "Houston", state "NY", and zip code "56011" for user ID "U546" and user/customer name "Anaya Gupta".
+The address type is "shipping" with street "699 1st Ave", city "New York", state "CA", and zip code "27682" for user ID "U547" and user/customer name "Sai Verma".
+The address type is "shipping" with street "671 Oak St", city "Los Angeles", state "IL", and zip code "39748" for user ID "U548" and user/customer name "Vihaan Mehta".
+The address type is "shipping" with street "965 Maple Rd", city "Chicago", state "NY", and zip code "92578" for user ID "U549" and user/customer name "Ishaan Patel".

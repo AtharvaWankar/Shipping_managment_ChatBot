@@ -1,0 +1,632 @@
+[
+  {
+    "partner_id": "DP1",
+    "partner_name": "XpressBees",
+    "contact_number": "+91-9802638111",
+    "email": "support0@courier.com",
+    "service_level_agreement": "6 days"
+  },
+  {
+    "partner_id": "DP2",
+    "partner_name": "DHL",
+    "contact_number": "+91-9425151369",
+    "email": "support1@courier.com",
+    "service_level_agreement": "7 days"
+  },
+  {
+    "partner_id": "DP3",
+    "partner_name": "DHL",
+    "contact_number": "+91-9828273897",
+    "email": "support2@courier.com",
+    "service_level_agreement": "6 days"
+  },
+  {
+    "partner_id": "DP4",
+    "partner_name": "DHL",
+    "contact_number": "+91-8224893199",
+    "email": "support3@courier.com",
+    "service_level_agreement": "4 days"
+  },
+  {
+    "partner_id": "DP5",
+    "partner_name": "DHL",
+    "contact_number": "+91-7144604712",
+    "email": "support4@courier.com",
+    "service_level_agreement": "3 days"
+  },
+  {
+    "partner_id": "DP6",
+    "partner_name": "Ecom Express",
+    "contact_number": "+91-8196187154",
+    "email": "support5@courier.com",
+    "service_level_agreement": "2 days"
+  },
+  {
+    "partner_id": "DP7",
+    "partner_name": "Ecom Express",
+    "contact_number": "+91-8867472949",
+    "email": "support6@courier.com",
+    "service_level_agreement": "6 days"
+  },
+  {
+    "partner_id": "DP8",
+    "partner_name": "Ecom Express",
+    "contact_number": "+91-8264289384",
+    "email": "support7@courier.com",
+    "service_level_agreement": "3 days"
+  },
+  {
+    "partner_id": "DP9",
+    "partner_name": "Delhivery",
+    "contact_number": "+91-7004015043",
+    "email": "support8@courier.com",
+    "service_level_agreement": "4 days"
+  },
+  {
+    "partner_id": "DP10",
+    "partner_name": "Delhivery",
+    "contact_number": "+91-8591319463",
+    "email": "support9@courier.com",
+    "service_level_agreement": "6 days"
+  },
+  {
+    "partner_id": "DP11",
+    "partner_name": "XpressBees",
+    "contact_number": "+91-9685313625",
+    "email": "support10@courier.com",
+    "service_level_agreement": "7 days"
+  },
+  {
+    "partner_id": "DP12",
+    "partner_name": "DHL",
+    "contact_number": "+91-9543183899",
+    "email": "support11@courier.com",
+    "service_level_agreement": "2 days"
+  },
+  {
+    "partner_id": "DP13",
+    "partner_name": "Ecom Express",
+    "contact_number": "+91-7095387232",
+    "email": "support12@courier.com",
+    "service_level_agreement": "3 days"
+  },
+  {
+    "partner_id": "DP14",
+    "partner_name": "DHL",
+    "contact_number": "+91-9080521561",
+    "email": "support13@courier.com",
+    "service_level_agreement": "5 days"
+  },
+  {
+    "partner_id": "DP15",
+    "partner_name": "FedEx",
+    "contact_number": "+91-8995801389",
+    "email": "support14@courier.com",
+    "service_level_agreement": "3 days"
+  },
+  {
+    "partner_id": "DP16",
+    "partner_name": "Delhivery",
+    "contact_number": "+91-7892492001",
+    "email": "support15@courier.com",
+    "service_level_agreement": "5 days"
+  },
+  {
+    "partner_id": "DP17",
+    "partner_name": "XpressBees",
+    "contact_number": "+91-9247425102",
+    "email": "support16@courier.com",
+    "service_level_agreement": "3 days"
+  },
+  {
+    "partner_id": "DP18",
+    "partner_name": "XpressBees",
+    "contact_number": "+91-9894883170",
+    "email": "support17@courier.com",
+    "service_level_agreement": "2 days"
+  },
+  {
+    "partner_id": "DP19",
+    "partner_name": "Delhivery",
+    "contact_number": "+91-7001930409",
+    "email": "support18@courier.com",
+    "service_level_agreement": "7 days"
+  },
+  {
+    "partner_id": "DP20",
+    "partner_name": "Delhivery",
+    "contact_number": "+91-9368412818",
+    "email": "support19@courier.com",
+    "service_level_agreement": "2 days"
+  },
+  {
+    "partner_id": "DP21",
+    "partner_name": "Delhivery",
+    "contact_number": "+91-9767215570",
+    "email": "support20@courier.com",
+    "service_level_agreement": "4 days"
+  },
+  {
+    "partner_id": "DP22",
+    "partner_name": "Delhivery",
+    "contact_number": "+91-7599921710",
+    "email": "support21@courier.com",
+    "service_level_agreement": "7 days"
+  },
+  {
+    "partner_id": "DP23",
+    "partner_name": "FedEx",
+    "contact_number": "+91-9192238721",
+    "email": "support22@courier.com",
+    "service_level_agreement": "4 days"
+  },
+  {
+    "partner_id": "DP24",
+    "partner_name": "Delhivery",
+    "contact_number": "+91-7994606646",
+    "email": "support23@courier.com",
+    "service_level_agreement": "5 days"
+  },
+  {
+    "partner_id": "DP25",
+    "partner_name": "Ecom Express",
+    "contact_number": "+91-8939984565",
+    "email": "support24@courier.com",
+    "service_level_agreement": "2 days"
+  },
+  {
+    "partner_id": "DP26",
+    "partner_name": "Delhivery",
+    "contact_number": "+91-9248927025",
+    "email": "support25@courier.com",
+    "service_level_agreement": "4 days"
+  },
+  {
+    "partner_id": "DP27",
+    "partner_name": "XpressBees",
+    "contact_number": "+91-9388702694",
+    "email": "support26@courier.com",
+    "service_level_agreement": "4 days"
+  },
+  {
+    "partner_id": "DP28",
+    "partner_name": "Ecom Express",
+    "contact_number": "+91-8157195785",
+    "email": "support27@courier.com",
+    "service_level_agreement": "2 days"
+  },
+  {
+    "partner_id": "DP29",
+    "partner_name": "XpressBees",
+    "contact_number": "+91-9061676642",
+    "email": "support28@courier.com",
+    "service_level_agreement": "4 days"
+  },
+  {
+    "partner_id": "DP30",
+    "partner_name": "DHL",
+    "contact_number": "+91-9695198848",
+    "email": "support29@courier.com",
+    "service_level_agreement": "2 days"
+  },
+  {
+    "partner_id": "DP31",
+    "partner_name": "BlueDart",
+    "contact_number": "+91-8986240992",
+    "email": "support30@courier.com",
+    "service_level_agreement": "7 days"
+  },
+  {
+    "partner_id": "DP32",
+    "partner_name": "Delhivery",
+    "contact_number": "+91-9768978459",
+    "email": "support31@courier.com",
+    "service_level_agreement": "7 days"
+  },
+  {
+    "partner_id": "DP33",
+    "partner_name": "DHL",
+    "contact_number": "+91-7443544744",
+    "email": "support32@courier.com",
+    "service_level_agreement": "3 days"
+  },
+  {
+    "partner_id": "DP34",
+    "partner_name": "XpressBees",
+    "contact_number": "+91-8419959125",
+    "email": "support33@courier.com",
+    "service_level_agreement": "7 days"
+  },
+  {
+    "partner_id": "DP35",
+    "partner_name": "BlueDart",
+    "contact_number": "+91-9279192455",
+    "email": "support34@courier.com",
+    "service_level_agreement": "6 days"
+  },
+  {
+    "partner_id": "DP36",
+    "partner_name": "FedEx",
+    "contact_number": "+91-7638171824",
+    "email": "support35@courier.com",
+    "service_level_agreement": "2 days"
+  },
+  {
+    "partner_id": "DP37",
+    "partner_name": "Ecom Express",
+    "contact_number": "+91-8290955225",
+    "email": "support36@courier.com",
+    "service_level_agreement": "4 days"
+  },
+  {
+    "partner_id": "DP38",
+    "partner_name": "Ecom Express",
+    "contact_number": "+91-7939415579",
+    "email": "support37@courier.com",
+    "service_level_agreement": "6 days"
+  },
+  {
+    "partner_id": "DP39",
+    "partner_name": "XpressBees",
+    "contact_number": "+91-7813955934",
+    "email": "support38@courier.com",
+    "service_level_agreement": "7 days"
+  },
+  {
+    "partner_id": "DP40",
+    "partner_name": "XpressBees",
+    "contact_number": "+91-7483802736",
+    "email": "support39@courier.com",
+    "service_level_agreement": "3 days"
+  },
+  {
+    "partner_id": "DP41",
+    "partner_name": "FedEx",
+    "contact_number": "+91-7044440407",
+    "email": "support40@courier.com",
+    "service_level_agreement": "5 days"
+  },
+  {
+    "partner_id": "DP42",
+    "partner_name": "Ecom Express",
+    "contact_number": "+91-8608487330",
+    "email": "support41@courier.com",
+    "service_level_agreement": "7 days"
+  },
+  {
+    "partner_id": "DP43",
+    "partner_name": "DHL",
+    "contact_number": "+91-9410698581",
+    "email": "support42@courier.com",
+    "service_level_agreement": "6 days"
+  },
+  {
+    "partner_id": "DP44",
+    "partner_name": "FedEx",
+    "contact_number": "+91-7893539967",
+    "email": "support43@courier.com",
+    "service_level_agreement": "3 days"
+  },
+  {
+    "partner_id": "DP45",
+    "partner_name": "XpressBees",
+    "contact_number": "+91-9571219215",
+    "email": "support44@courier.com",
+    "service_level_agreement": "5 days"
+  },
+  {
+    "partner_id": "DP46",
+    "partner_name": "FedEx",
+    "contact_number": "+91-7411362110",
+    "email": "support45@courier.com",
+    "service_level_agreement": "3 days"
+  },
+  {
+    "partner_id": "DP47",
+    "partner_name": "Ecom Express",
+    "contact_number": "+91-9825174078",
+    "email": "support46@courier.com",
+    "service_level_agreement": "2 days"
+  },
+  {
+    "partner_id": "DP48",
+    "partner_name": "XpressBees",
+    "contact_number": "+91-8640774940",
+    "email": "support47@courier.com",
+    "service_level_agreement": "7 days"
+  },
+  {
+    "partner_id": "DP49",
+    "partner_name": "FedEx",
+    "contact_number": "+91-7033413771",
+    "email": "support48@courier.com",
+    "service_level_agreement": "6 days"
+  },
+  {
+    "partner_id": "DP50",
+    "partner_name": "DHL",
+    "contact_number": "+91-9007887911",
+    "email": "support49@courier.com",
+    "service_level_agreement": "3 days"
+  },
+  {
+    "partner_id": "DP51",
+    "partner_name": "BlueDart",
+    "contact_number": "+91-8629878836",
+    "email": "support50@courier.com",
+    "service_level_agreement": "4 days"
+  },
+  {
+    "partner_id": "DP52",
+    "partner_name": "XpressBees",
+    "contact_number": "+91-8933584201",
+    "email": "support51@courier.com",
+    "service_level_agreement": "3 days"
+  },
+  {
+    "partner_id": "DP53",
+    "partner_name": "Ecom Express",
+    "contact_number": "+91-9134266360",
+    "email": "support52@courier.com",
+    "service_level_agreement": "7 days"
+  },
+  {
+    "partner_id": "DP54",
+    "partner_name": "Delhivery",
+    "contact_number": "+91-7885705379",
+    "email": "support53@courier.com",
+    "service_level_agreement": "7 days"
+  },
+  {
+    "partner_id": "DP55",
+    "partner_name": "DHL",
+    "contact_number": "+91-9628513579",
+    "email": "support54@courier.com",
+    "service_level_agreement": "2 days"
+  },
+  {
+    "partner_id": "DP56",
+    "partner_name": "Ecom Express",
+    "contact_number": "+91-9095849614",
+    "email": "support55@courier.com",
+    "service_level_agreement": "2 days"
+  },
+  {
+    "partner_id": "DP57",
+    "partner_name": "Ecom Express",
+    "contact_number": "+91-7096247279",
+    "email": "support56@courier.com",
+    "service_level_agreement": "7 days"
+  },
+  {
+    "partner_id": "DP58",
+    "partner_name": "Ecom Express",
+    "contact_number": "+91-9522029581",
+    "email": "support57@courier.com",
+    "service_level_agreement": "7 days"
+  },
+  {
+    "partner_id": "DP59",
+    "partner_name": "BlueDart",
+    "contact_number": "+91-8679174022",
+    "email": "support58@courier.com",
+    "service_level_agreement": "2 days"
+  },
+  {
+    "partner_id": "DP60",
+    "partner_name": "Delhivery",
+    "contact_number": "+91-7436867351",
+    "email": "support59@courier.com",
+    "service_level_agreement": "2 days"
+  },
+  {
+    "partner_id": "DP61",
+    "partner_name": "Ecom Express",
+    "contact_number": "+91-8554282647",
+    "email": "support60@courier.com",
+    "service_level_agreement": "3 days"
+  },
+  {
+    "partner_id": "DP62",
+    "partner_name": "BlueDart",
+    "contact_number": "+91-8956065409",
+    "email": "support61@courier.com",
+    "service_level_agreement": "2 days"
+  },
+  {
+    "partner_id": "DP63",
+    "partner_name": "BlueDart",
+    "contact_number": "+91-8555200145",
+    "email": "support62@courier.com",
+    "service_level_agreement": "2 days"
+  },
+  {
+    "partner_id": "DP64",
+    "partner_name": "DHL",
+    "contact_number": "+91-9902322491",
+    "email": "support63@courier.com",
+    "service_level_agreement": "7 days"
+  },
+  {
+    "partner_id": "DP65",
+    "partner_name": "Ecom Express",
+    "contact_number": "+91-7771681719",
+    "email": "support64@courier.com",
+    "service_level_agreement": "3 days"
+  },
+  {
+    "partner_id": "DP66",
+    "partner_name": "BlueDart",
+    "contact_number": "+91-8814572219",
+    "email": "support65@courier.com",
+    "service_level_agreement": "6 days"
+  },
+  {
+    "partner_id": "DP67",
+    "partner_name": "Ecom Express",
+    "contact_number": "+91-7254892201",
+    "email": "support66@courier.com",
+    "service_level_agreement": "4 days"
+  },
+  {
+    "partner_id": "DP68",
+    "partner_name": "FedEx",
+    "contact_number": "+91-9277148056",
+    "email": "support67@courier.com",
+    "service_level_agreement": "5 days"
+  },
+  {
+    "partner_id": "DP69",
+    "partner_name": "BlueDart",
+    "contact_number": "+91-7021367707",
+    "email": "support68@courier.com",
+    "service_level_agreement": "7 days"
+  },
+  {
+    "partner_id": "DP70",
+    "partner_name": "Ecom Express",
+    "contact_number": "+91-9045353335",
+    "email": "support69@courier.com",
+    "service_level_agreement": "2 days"
+  },
+  {
+    "partner_id": "DP71",
+    "partner_name": "FedEx",
+    "contact_number": "+91-9126706341",
+    "email": "support70@courier.com",
+    "service_level_agreement": "7 days"
+  },
+  {
+    "partner_id": "DP72",
+    "partner_name": "Ecom Express",
+    "contact_number": "+91-7501467870",
+    "email": "support71@courier.com",
+    "service_level_agreement": "3 days"
+  },
+  {
+    "partner_id": "DP73",
+    "partner_name": "DHL",
+    "contact_number": "+91-7786653853",
+    "email": "support72@courier.com",
+    "service_level_agreement": "7 days"
+  },
+  {
+    "partner_id": "DP74",
+    "partner_name": "DHL",
+    "contact_number": "+91-7196366395",
+    "email": "support73@courier.com",
+    "service_level_agreement": "5 days"
+  },
+  {
+    "partner_id": "DP75",
+    "partner_name": "Delhivery",
+    "contact_number": "+91-8614583293",
+    "email": "support74@courier.com",
+    "service_level_agreement": "4 days"
+  },
+  {
+    "partner_id": "DP76",
+    "partner_name": "BlueDart",
+    "contact_number": "+91-8001463128",
+    "email": "support75@courier.com",
+    "service_level_agreement": "3 days"
+  },
+  {
+    "partner_id": "DP77",
+    "partner_name": "BlueDart",
+    "contact_number": "+91-7931616903",
+    "email": "support76@courier.com",
+    "service_level_agreement": "5 days"
+  },
+  {
+    "partner_id": "DP78",
+    "partner_name": "Delhivery",
+    "contact_number": "+91-9831227554",
+    "email": "support77@courier.com",
+    "service_level_agreement": "3 days"
+  },
+  {
+    "partner_id": "DP79",
+    "partner_name": "DHL",
+    "contact_number": "+91-9025284810",
+    "email": "support78@courier.com",
+    "service_level_agreement": "2 days"
+  },
+  {
+    "partner_id": "DP80",
+    "partner_name": "XpressBees",
+    "contact_number": "+91-8212214301",
+    "email": "support79@courier.com",
+    "service_level_agreement": "4 days"
+  },
+  {
+    "partner_id": "DP81",
+    "partner_name": "DHL",
+    "contact_number": "+91-7022686880",
+    "email": "support80@courier.com",
+    "service_level_agreement": "5 days"
+  },
+  {
+    "partner_id": "DP82",
+    "partner_name": "Delhivery",
+    "contact_number": "+91-7694701632",
+    "email": "support81@courier.com",
+    "service_level_agreement": "3 days"
+  },
+  {
+    "partner_id": "DP83",
+    "partner_name": "XpressBees",
+    "contact_number": "+91-9744527104",
+    "email": "support82@courier.com",
+    "service_level_agreement": "6 days"
+  },
+  {
+    "partner_id": "DP84",
+    "partner_name": "XpressBees",
+    "contact_number": "+91-7254058424",
+    "email": "support83@courier.com",
+    "service_level_agreement": "6 days"
+  },
+  {
+    "partner_id": "DP85",
+    "partner_name": "BlueDart",
+    "contact_number": "+91-8314799832",
+    "email": "support84@courier.com",
+    "service_level_agreement": "7 days"
+  },
+  {
+    "partner_id": "DP86",
+    "partner_name": "Delhivery",
+    "contact_number": "+91-7039396159",
+    "email": "support85@courier.com",
+    "service_level_agreement": "2 days"
+  },
+  {
+    "partner_id": "DP87",
+    "partner_name": "Delhivery",
+    "contact_number": "+91-9070163277",
+    "email": "support86@courier.com",
+    "service_level_agreement": "2 days"
+  },
+  {
+    "partner_id": "DP88",
+    "partner_name": "Delhivery",
+    "contact_number": "+91-7092043845",
+    "email": "support87@courier.com",
+    "service_level_agreement": "3 days"
+  },
+  {
+    "partner_id": "DP89",
+    "partner_name": "XpressBees",
+    "contact_number": "+91-7156890318",
+    "email": "support88@courier.com",
+    "service_level_agreement": "7 days"
+  },
+  {
+    "partner_id": "DP90",
+    "partner_name": "FedEx",
+    "contact_number": "+91-8982879643",
+    "email": "support89@courier.com",
+    "service_level_agreement": "6 days"
+  }
+]

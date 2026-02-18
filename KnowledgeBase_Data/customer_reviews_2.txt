@@ -1,0 +1,52 @@
+**Customer Product Reviews**
+
+1. User "Aarav Nair" (ID: U500) rated "Headphones" 3 stars on 25th November at 10:57 pm with comment "Very good".
+2. User "Anaya Joshi" (ID: U501) rated "Keyboard" 5 stars on 9th September at 8:04 pm with comment "Poor".
+3. User "Ayaan Reddy" (ID: U502) rated "Speaker" 5 stars on 20th December at 2:32 pm with comment "Average".
+4. User "Vivaan Mehta" (ID: U503) rated "Monitor" 3 stars on 7th December at 11:55 pm with comment "Very good".
+5. User "Sai Joshi" (ID: U504) rated "Smartphone" 2 stars on 1st August at 5:54 pm with comment "Poor".
+6. User "Sai Reddy" (ID: U505) rated "Monitor" 3 stars on 8th October at 12:59 am with comment "Average".
+7. User "Vivaan Joshi" (ID: U506) rated "Keyboard" 1 stars on 12th December at 8:04 pm with comment "Average".
+8. User "Diya Kumar" (ID: U507) rated "Laptop" 2 stars on 15th August at 3:01 am with comment "Average".
+9. User "Myra Sharma" (ID: U508) rated "Headphones" 4 stars on 3rd May at 4:37 am with comment "Poor".
+10. User "Sai Patel" (ID: U509) rated "Speaker" 4 stars on 22nd May at 4:41 pm with comment "Very good".
+11. User "Anika Verma" (ID: U510) rated "Laptop" 5 stars on 22nd November at 7:54 am with comment "Excellent!".
+12. User "Arjun Reddy" (ID: U511) rated "Tablet" 4 stars on 1st May at 11:37 pm with comment "Average".
+13. User "Anika Kapoor" (ID: U512) rated "Mouse" 2 stars on 21st May at 12:54 am with comment "Excellent!".
+14. User "Diya Kumar" (ID: U513) rated "Headphones" 4 stars on 22nd March at 4:25 am with comment "Terrible".
+15. User "Avni Reddy" (ID: U514) rated "Headphones" 4 stars on 19th July at 6:39 pm with comment "Poor".
+16. User "Anika Reddy" (ID: U515) rated "Headphones" 2 stars on 15th August at 3:01 am with comment "Average".
+17. User "Avni Gupta" (ID: U516) rated "Monitor" 3 stars on 11th November at 5:21 pm with comment "Very good".
+18. User "Siya Kumar" (ID: U517) rated "Speaker" 1 stars on 7th April at 4:58 pm with comment "Excellent!".
+19. User "Myra Patel" (ID: U518) rated "Speaker" 3 stars on 10th January at 10:07 am with comment "Very good".
+20. User "Vivaan Nair" (ID: U519) rated "Laptop" 2 stars on 16th July at 4:54 am with comment "Very good".
+21. User "Meera Gupta" (ID: U520) rated "Speaker" 1 stars on 23rd October at 6:43 am with comment "Excellent!".
+22. User "Sai Joshi" (ID: U521) rated "Headphones" 1 stars on 27th March at 5:06 pm with comment "Average".
+23. User "Aadhya Mehta" (ID: U522) rated "Laptop" 5 stars on 11th November at 6:15 am with comment "Very good".
+24. User "Arjun Reddy" (ID: U523) rated "Tablet" 5 stars on 25th March at 11:09 am with comment "Very good".
+25. User "Anaya Verma" (ID: U524) rated "Smartphone" 3 stars on 20th May at 7:07 pm with comment "Poor".
+26. User "Myra Gupta" (ID: U525) rated "Camera" 2 stars on 22nd December at 8:41 pm with comment "Excellent!".
+27. User "Anaya Kumar" (ID: U526) rated "Headphones" 1 stars on 11th September at 7:01 am with comment "Excellent!".
+28. User "Saanvi Sharma" (ID: U527) rated "Mouse" 1 stars on 12th July at 2:19 pm with comment "Very good".
+29. User "Anika Mehta" (ID: U528) rated "Mouse" 1 stars on 17th December at 10:37 pm with comment "Terrible".
+30. User "Aditya Joshi" (ID: U529) rated "Mouse" 3 stars on 19th January at 5:02 am with comment "Terrible".
+31. User "Vivaan Joshi" (ID: U530) rated "Camera" 5 stars on 5th May at 12:01 am with comment "Very good".
+32. User "Arjun Gupta" (ID: U531) rated "Laptop" 5 stars on 1st February at 3:33 am with comment "Very good".
+33. User "Anaya Joshi" (ID: U532) rated "Laptop" 2 stars on 16th December at 11:38 am with comment "Very good".
+34. User "Priya Mehta" (ID: U533) rated "Speaker" 1 stars on 15th November at 3:59 pm with comment "Terrible".
+35. User "Sai Reddy" (ID: U534) rated "Mouse" 4 stars on 19th October at 11:56 am with comment "Poor".
+36. User "Saanvi Gupta" (ID: U535) rated "Mouse" 1 stars on 26th April at 7:32 am with comment "Excellent!".
+37. User "Anika Patel" (ID: U536) rated "Laptop" 4 stars on 20th August at 11:12 pm with comment "Very good".
+38. User "Aditya Reddy" (ID: U537) rated "Monitor" 3 stars on 8th December at 4:29 pm with comment "Terrible".
+39. User "Arjun Reddy" (ID: U538) rated "Smartphone" 3 stars on 4th May at 8:55 pm with comment "Terrible".
+40. User "Meera Reddy" (ID: U539) rated "Tablet" 2 stars on 17th November at 2:13 pm with comment "Average".
+41. User "Vivaan Kumar" (ID: U540) rated "Keyboard" 5 stars on 29th September at 2:15 am with comment "Very good".
+42. User "Saanvi Kapoor" (ID: U541) rated "Mouse" 2 stars on 20th August at 9:30 pm with comment "Terrible".
+43. User "Siya Reddy" (ID: U542) rated "Camera" 3 stars on 1st April at 2:44 pm with comment "Very good".
+44. User "Ayaan Patel" (ID: U543) rated "Camera" 3 stars on 12th May at 6:14 pm with comment "Excellent!".
+45. User "Diya Joshi" (ID: U544) rated "Monitor" 4 stars on 24th December at 11:49 pm with comment "Average".
+46. User "Vihaan Kapoor" (ID: U545) rated "Camera" 2 stars on 25th October at 11:11 pm with comment "Average".
+47. User "Anaya Gupta" (ID: U546) rated "Smartwatch" 4 stars on 3rd October at 1:35 pm with comment "Excellent!".
+48. User "Sai Verma" (ID: U547) rated "Headphones" 1 stars on 27th April at 3:06 am with comment "Average".
+49. User "Vihaan Mehta" (ID: U548) rated "Speaker" 1 stars on 2nd April at 10:51 pm with comment "Terrible".
+50. User "Ishaan Patel" (ID: U549) rated "Camera" 5 stars on 1st September at 3:19 pm with comment "Terrible".

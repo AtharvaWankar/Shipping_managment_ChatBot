@@ -1,0 +1,302 @@
+[
+  {
+    "product": "Headphones",
+    "rating": 3,
+    "comment": "Very good",
+    "date": "2022-11-25 22:57:31"
+  },
+  {
+    "product": "Keyboard",
+    "rating": 5,
+    "comment": "Poor",
+    "date": "2022-09-09 20:04:10"
+  },
+  {
+    "product": "Speaker",
+    "rating": 5,
+    "comment": "Average",
+    "date": "2023-12-20 14:32:23"
+  },
+  {
+    "product": "Monitor",
+    "rating": 3,
+    "comment": "Very good",
+    "date": "2023-12-07 23:55:48"
+  },
+  {
+    "product": "Smartphone",
+    "rating": 2,
+    "comment": "Poor",
+    "date": "2023-08-01 17:54:15"
+  },
+  {
+    "product": "Monitor",
+    "rating": 3,
+    "comment": "Average",
+    "date": "2022-10-08 00:59:55"
+  },
+  {
+    "product": "Keyboard",
+    "rating": 1,
+    "comment": "Average",
+    "date": "2022-12-12 20:04:52"
+  },
+  {
+    "product": "Laptop",
+    "rating": 2,
+    "comment": "Average",
+    "date": "2022-08-15 03:01:47"
+  },
+  {
+    "product": "Headphones",
+    "rating": 4,
+    "comment": "Poor",
+    "date": "2023-05-03 04:37:46"
+  },
+  {
+    "product": "Speaker",
+    "rating": 4,
+    "comment": "Very good",
+    "date": "2023-05-22 16:41:25"
+  },
+  {
+    "product": "Laptop",
+    "rating": 5,
+    "comment": "Excellent!",
+    "date": "2022-11-22 07:54:42"
+  },
+  {
+    "product": "Tablet",
+    "rating": 4,
+    "comment": "Average",
+    "date": "2022-05-01 23:37:22"
+  },
+  {
+    "product": "Mouse",
+    "rating": 2,
+    "comment": "Excellent!",
+    "date": "2023-05-21 00:54:12"
+  },
+  {
+    "product": "Headphones",
+    "rating": 4,
+    "comment": "Terrible",
+    "date": "2022-03-22 04:25:41"
+  },
+  {
+    "product": "Headphones",
+    "rating": 4,
+    "comment": "Poor",
+    "date": "2023-07-19 18:39:39"
+  },
+  {
+    "product": "Headphones",
+    "rating": 2,
+    "comment": "Average",
+    "date": "2023-08-15 03:01:01"
+  },
+  {
+    "product": "Monitor",
+    "rating": 3,
+    "comment": "Very good",
+    "date": "2022-11-11 17:21:18"
+  },
+  {
+    "product": "Speaker",
+    "rating": 1,
+    "comment": "Excellent!",
+    "date": "2022-04-07 16:58:04"
+  },
+  {
+    "product": "Speaker",
+    "rating": 3,
+    "comment": "Very good",
+    "date": "2023-01-10 10:07:06"
+  },
+  {
+    "product": "Laptop",
+    "rating": 2,
+    "comment": "Very good",
+    "date": "2023-07-16 04:54:22"
+  },
+  {
+    "product": "Speaker",
+    "rating": 1,
+    "comment": "Excellent!",
+    "date": "2022-10-23 06:43:18"
+  },
+  {
+    "product": "Headphones",
+    "rating": 1,
+    "comment": "Average",
+    "date": "2023-03-27 17:06:27"
+  },
+  {
+    "product": "Laptop",
+    "rating": 5,
+    "comment": "Very good",
+    "date": "2022-11-11 06:15:52"
+  },
+  {
+    "product": "Tablet",
+    "rating": 5,
+    "comment": "Very good",
+    "date": "2022-03-25 11:09:53"
+  },
+  {
+    "product": "Smartphone",
+    "rating": 3,
+    "comment": "Poor",
+    "date": "2022-05-20 19:07:52"
+  },
+  {
+    "product": "Camera",
+    "rating": 2,
+    "comment": "Excellent!",
+    "date": "2022-12-22 20:41:14"
+  },
+  {
+    "product": "Headphones",
+    "rating": 1,
+    "comment": "Excellent!",
+    "date": "2022-09-11 07:01:27"
+  },
+  {
+    "product": "Mouse",
+    "rating": 1,
+    "comment": "Very good",
+    "date": "2023-07-12 14:19:12"
+  },
+  {
+    "product": "Mouse",
+    "rating": 1,
+    "comment": "Terrible",
+    "date": "2022-12-17 22:37:59"
+  },
+  {
+    "product": "Mouse",
+    "rating": 3,
+    "comment": "Terrible",
+    "date": "2022-01-19 05:02:31"
+  },
+  {
+    "product": "Camera",
+    "rating": 5,
+    "comment": "Very good",
+    "date": "2022-05-05 00:01:39"
+  },
+  {
+    "product": "Laptop",
+    "rating": 5,
+    "comment": "Very good",
+    "date": "2022-02-01 03:33:35"
+  },
+  {
+    "product": "Laptop",
+    "rating": 2,
+    "comment": "Very good",
+    "date": "2022-12-16 11:38:46"
+  },
+  {
+    "product": "Speaker",
+    "rating": 1,
+    "comment": "Terrible",
+    "date": "2023-11-15 15:59:31"
+  },
+  {
+    "product": "Mouse",
+    "rating": 4,
+    "comment": "Poor",
+    "date": "2022-10-19 11:56:51"
+  },
+  {
+    "product": "Mouse",
+    "rating": 1,
+    "comment": "Excellent!",
+    "date": "2022-04-26 07:32:05"
+  },
+  {
+    "product": "Laptop",
+    "rating": 4,
+    "comment": "Very good",
+    "date": "2023-08-20 23:12:59"
+  },
+  {
+    "product": "Monitor",
+    "rating": 3,
+    "comment": "Terrible",
+    "date": "2023-12-08 16:29:35"
+  },
+  {
+    "product": "Smartphone",
+    "rating": 3,
+    "comment": "Terrible",
+    "date": "2023-05-04 20:55:34"
+  },
+  {
+    "product": "Tablet",
+    "rating": 2,
+    "comment": "Average",
+    "date": "2023-11-17 14:13:29"
+  },
+  {
+    "product": "Keyboard",
+    "rating": 5,
+    "comment": "Very good",
+    "date": "2022-09-29 02:15:28"
+  },
+  {
+    "product": "Mouse",
+    "rating": 2,
+    "comment": "Terrible",
+    "date": "2022-08-20 21:30:07"
+  },
+  {
+    "product": "Camera",
+    "rating": 3,
+    "comment": "Very good",
+    "date": "2023-04-01 14:44:09"
+  },
+  {
+    "product": "Camera",
+    "rating": 3,
+    "comment": "Excellent!",
+    "date": "2022-05-12 18:14:02"
+  },
+  {
+    "product": "Monitor",
+    "rating": 4,
+    "comment": "Average",
+    "date": "2023-12-24 23:49:33"
+  },
+  {
+    "product": "Camera",
+    "rating": 2,
+    "comment": "Average",
+    "date": "2023-10-25 23:11:15"
+  },
+  {
+    "product": "Smartwatch",
+    "rating": 4,
+    "comment": "Excellent!",
+    "date": "2022-10-03 13:35:21"
+  },
+  {
+    "product": "Headphones",
+    "rating": 1,
+    "comment": "Average",
+    "date": "2023-04-27 03:06:53"
+  },
+  {
+    "product": "Speaker",
+    "rating": 1,
+    "comment": "Terrible",
+    "date": "2023-04-02 22:51:52"
+  },
+  {
+    "product": "Camera",
+    "rating": 5,
+    "comment": "Terrible",
+    "date": "2022-09-01 15:19:31"
+  }
+]

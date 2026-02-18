@@ -1,0 +1,52 @@
+Customer Login Activity
+
+User "Aarav Nair" (ID: U500) last logged in on 12th May at 1:53 am using a Android device from IP 13.27.140.29.
+User "Anaya Joshi" (ID: U501) last logged in on 12th July at 10:55 am using a iPad device from IP 24.228.184.68.
+User "Ayaan Reddy" (ID: U502) last logged in on 15th February at 5:45 am using a iPhone device from IP 127.34.125.27.
+User "Vivaan Mehta" (ID: U503) last logged in on 12th February at 1:30 pm using a MacBook device from IP 236.31.35.202.
+User "Sai Joshi" (ID: U504) last logged in on 14th September at 6:08 am using a Android device from IP 177.78.83.202.
+User "Sai Reddy" (ID: U505) last logged in on 17th September at 3:42 pm using a Linux Desktop device from IP 162.46.221.182.
+User "Vivaan Joshi" (ID: U506) last logged in on 29th July at 5:24 am using a Linux Desktop device from IP 253.26.165.141.
+User "Diya Kumar" (ID: U507) last logged in on 2nd April at 11:49 pm using a iPhone device from IP 44.100.254.66.
+User "Myra Sharma" (ID: U508) last logged in on 26th December at 3:00 pm using a iPad device from IP 203.101.39.1.
+User "Sai Patel" (ID: U509) last logged in on 3rd April at 6:23 pm using a iPad device from IP 214.58.188.2.
+User "Anika Verma" (ID: U510) last logged in on 2nd February at 7:58 am using a Linux Desktop device from IP 143.93.120.227.
+User "Arjun Reddy" (ID: U511) last logged in on 16th June at 8:12 am using a Windows PC device from IP 196.38.230.210.
+User "Anika Kapoor" (ID: U512) last logged in on 31st May at 8:25 pm using a iPad device from IP 41.182.156.91.
+User "Diya Kumar" (ID: U513) last logged in on 24th October at 8:05 am using a Android device from IP 135.195.166.62.
+User "Avni Reddy" (ID: U514) last logged in on 11th May at 1:43 am using a MacBook device from IP 42.63.135.149.
+User "Anika Reddy" (ID: U515) last logged in on 30th June at 6:19 pm using a iPad device from IP 120.35.93.186.
+User "Avni Gupta" (ID: U516) last logged in on 2nd January at 3:31 am using a iPhone device from IP 25.244.68.34.
+User "Siya Kumar" (ID: U517) last logged in on 26th September at 1:55 pm using a iPhone device from IP 26.106.73.231.
+User "Myra Patel" (ID: U518) last logged in on 20th June at 8:11 am using a Linux Desktop device from IP 64.98.56.86.
+User "Vivaan Nair" (ID: U519) last logged in on 21st September at 7:46 pm using a iPhone device from IP 79.117.163.213.
+User "Meera Gupta" (ID: U520) last logged in on 9th November at 8:32 am using a Windows PC device from IP 135.89.113.233.
+User "Sai Joshi" (ID: U521) last logged in on 7th May at 5:03 pm using a Linux Desktop device from IP 9.206.106.83.
+User "Aadhya Mehta" (ID: U522) last logged in on 4th June at 3:13 am using a Android device from IP 74.71.249.238.
+User "Arjun Reddy" (ID: U523) last logged in on 23rd September at 2:04 pm using a MacBook device from IP 129.214.151.125.
+User "Anaya Verma" (ID: U524) last logged in on 7th May at 9:38 am using a Windows PC device from IP 217.14.205.35.
+User "Myra Gupta" (ID: U525) last logged in on 5th July at 8:51 pm using a MacBook device from IP 240.232.50.66.
+User "Anaya Kumar" (ID: U526) last logged in on 27th June at 8:38 pm using a iPhone device from IP 140.108.43.177.
+User "Saanvi Sharma" (ID: U527) last logged in on 1st May at 6:32 am using a MacBook device from IP 71.4.180.130.
+User "Anika Mehta" (ID: U528) last logged in on 6th August at 4:04 am using a iPhone device from IP 84.219.76.157.
+User "Aditya Joshi" (ID: U529) last logged in on 14th January at 5:08 am using a iPad device from IP 251.69.181.161.
+User "Vivaan Joshi" (ID: U530) last logged in on 8th January at 7:41 am using a MacBook device from IP 103.201.241.131.
+User "Arjun Gupta" (ID: U531) last logged in on 9th December at 6:48 am using a Linux Desktop device from IP 48.79.105.114.
+User "Anaya Joshi" (ID: U532) last logged in on 14th November at 6:48 am using a iPad device from IP 210.16.214.228.
+User "Priya Mehta" (ID: U533) last logged in on 18th May at 11:12 pm using a iPhone device from IP 2.93.223.242.
+User "Sai Reddy" (ID: U534) last logged in on 8th October at 10:03 pm using a iPhone device from IP 231.120.246.243.
+User "Saanvi Gupta" (ID: U535) last logged in on 29th January at 11:39 pm using a iPad device from IP 85.19.29.145.
+User "Anika Patel" (ID: U536) last logged in on 30th October at 2:04 pm using a iPad device from IP 60.252.12.18.
+User "Aditya Reddy" (ID: U537) last logged in on 25th March at 5:13 am using a iPad device from IP 165.102.3.133.
+User "Arjun Reddy" (ID: U538) last logged in on 10th June at 2:05 pm using a Windows PC device from IP 99.210.111.223.
+User "Meera Reddy" (ID: U539) last logged in on 24th November at 3:46 am using a Android device from IP 43.230.109.170.
+User "Vivaan Kumar" (ID: U540) last logged in on 7th February at 10:30 am using a iPad device from IP 156.78.58.135.
+User "Saanvi Kapoor" (ID: U541) last logged in on 8th December at 4:48 am using a Windows PC device from IP 156.178.31.207.
+User "Siya Reddy" (ID: U542) last logged in on 25th April at 4:03 am using a MacBook device from IP 194.215.120.27.
+User "Ayaan Patel" (ID: U543) last logged in on 24th November at 10:10 am using a iPad device from IP 121.157.101.179.
+User "Diya Joshi" (ID: U544) last logged in on 16th June at 11:03 pm using a Windows PC device from IP 52.248.212.110.
+User "Vihaan Kapoor" (ID: U545) last logged in on 15th March at 8:38 am using a Windows PC device from IP 51.125.155.32.
+User "Anaya Gupta" (ID: U546) last logged in on 20th February at 3:04 pm using a Android device from IP 37.81.56.92.
+User "Sai Verma" (ID: U547) last logged in on 20th January at 9:47 am using a Android device from IP 182.31.159.66.
+User "Vihaan Mehta" (ID: U548) last logged in on 30th September at 1:06 pm using a Android device from IP 251.97.58.129.
+User "Ishaan Patel" (ID: U549) last logged in on 15th June at 7:16 am using a iPad device from IP 25.214.16.134.

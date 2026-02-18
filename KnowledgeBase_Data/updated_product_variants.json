@@ -1,0 +1,1090 @@
+[
+    {
+        "product_id": "P124",
+        "available_sizes": [
+            "XXL",
+            "L",
+            "S",
+            "XL"
+        ],
+        "available_colors": [
+            "Green",
+            "Pink",
+            "White",
+            "Yellow",
+            "Red"
+        ],
+        "model": "Deluxe",
+        "product_name": "Bluetooth Headphones"
+    },
+    {
+        "product_id": "P125",
+        "available_sizes": [
+            "S",
+            "L"
+        ],
+        "available_colors": [
+            "Blue",
+            "Red",
+            "Green",
+            "Pink",
+            "Yellow",
+            "White"
+        ],
+        "model": "Deluxe",
+        "product_name": "Cotton T-Shirt"
+    },
+    {
+        "product_id": "P126",
+        "available_sizes": [
+            "XXL",
+            "L",
+            "XL",
+            "M",
+            "S"
+        ],
+        "available_colors": [
+            "Blue",
+            "Yellow"
+        ],
+        "model": "Pro",
+        "product_name": "Ceramic Dinner Set"
+    },
+    {
+        "product_id": "P127",
+        "available_sizes": [
+            "S",
+            "M",
+            "XXL",
+            "XL"
+        ],
+        "available_colors": [
+            "Yellow"
+        ],
+        "model": "Pro",
+        "product_name": "Yoga Mat"
+    },
+    {
+        "product_id": "P128",
+        "available_sizes": [
+            "S",
+            "XXL",
+            "XL",
+            "M",
+            "L"
+        ],
+        "available_colors": [
+            "Green",
+            "Blue",
+            "White",
+            "Pink"
+        ],
+        "model": "Lite",
+        "product_name": "Smartphone Stand"
+    },
+    {
+        "product_id": "P129",
+        "available_sizes": [
+            "XL"
+        ],
+        "available_colors": [
+            "White",
+            "Red",
+            "Green"
+        ],
+        "model": "Standard",
+        "product_name": "Leather Wallet"
+    },
+    {
+        "product_id": "P130",
+        "available_sizes": [
+            "L",
+            "XL"
+        ],
+        "available_colors": [
+            "White",
+            "Black",
+            "Red",
+            "Yellow",
+            "Pink",
+            "Green"
+        ],
+        "model": "Standard",
+        "product_name": "LED Desk Lamp"
+    },
+    {
+        "product_id": "P131",
+        "available_sizes": [
+            "L",
+            "M",
+            "XL",
+            "XXL"
+        ],
+        "available_colors": [
+            "Green",
+            "Yellow"
+        ],
+        "model": "Standard",
+        "product_name": "Gaming Keyboard"
+    },
+    {
+        "product_id": "P132",
+        "available_sizes": [
+            "S",
+            "L",
+            "XXL",
+            "M"
+        ],
+        "available_colors": [
+            "Green",
+            "Yellow",
+            "Black",
+            "Red",
+            "Blue",
+            "Pink",
+            "White"
+        ],
+        "model": "Pro",
+        "product_name": "Organic Green Tea"
+    },
+    {
+        "product_id": "P133",
+        "available_sizes": [
+            "S",
+            "M",
+            "XL",
+            "L"
+        ],
+        "available_colors": [
+            "Pink",
+            "Green",
+            "Yellow",
+            "Black",
+            "White",
+            "Red",
+            "Blue"
+        ],
+        "model": "Standard",
+        "product_name": "Stainless Steel Water Bottle"
+    },
+    {
+        "product_id": "P134",
+        "available_sizes": [
+            "XXL",
+            "XL",
+            "S"
+        ],
+        "available_colors": [
+            "Black",
+            "Pink",
+            "Red",
+            "White",
+            "Yellow",
+            "Blue"
+        ],
+        "model": "Standard",
+        "product_name": "Portable Power Bank"
+    },
+    {
+        "product_id": "P135",
+        "available_sizes": [
+            "XXL"
+        ],
+        "available_colors": [
+            "Red",
+            "Black",
+            "White",
+            "Green",
+            "Yellow",
+            "Blue"
+        ],
+        "model": "Lite",
+        "product_name": "Silk Saree"
+    },
+    {
+        "product_id": "P136",
+        "available_sizes": [
+            "L",
+            "XXL",
+            "M",
+            "XL"
+        ],
+        "available_colors": [
+            "Blue",
+            "Yellow",
+            "Red",
+            "Green",
+            "Pink",
+            "Black"
+        ],
+        "model": "Pro",
+        "product_name": "Wooden Coffee Table"
+    },
+    {
+        "product_id": "P137",
+        "available_sizes": [
+            "L",
+            "M",
+            "S"
+        ],
+        "available_colors": [
+            "Green",
+            "Yellow",
+            "Black"
+        ],
+        "model": "Pro",
+        "product_name": "Resistance Bands Set"
+    },
+    {
+        "product_id": "P138",
+        "available_sizes": [
+            "XXL",
+            "XL",
+            "M"
+        ],
+        "available_colors": [
+            "Pink",
+            "Black"
+        ],
+        "model": "Lite",
+        "product_name": "Laptop Sleeve"
+    },
+    {
+        "product_id": "P139",
+        "available_sizes": [
+            "XL",
+            "S"
+        ],
+        "available_colors": [
+            "Blue"
+        ],
+        "model": "Max",
+        "product_name": "Denim Jeans"
+    },
+    {
+        "product_id": "P140",
+        "available_sizes": [
+            "L",
+            "XXL",
+            "XL"
+        ],
+        "available_colors": [
+            "Pink",
+            "Red",
+            "White"
+        ],
+        "model": "Pro",
+        "product_name": "Wall Clock"
+    },
+    {
+        "product_id": "P141",
+        "available_sizes": [
+            "XXL",
+            "M",
+            "XL"
+        ],
+        "available_colors": [
+            "Yellow",
+            "Red",
+            "Black",
+            "Pink"
+        ],
+        "model": "Deluxe",
+        "product_name": "Gaming Mouse Pad"
+    },
+    {
+        "product_id": "P142",
+        "available_sizes": [
+            "XXL"
+        ],
+        "available_colors": [
+            "Pink",
+            "Black",
+            "Red",
+            "Yellow",
+            "White",
+            "Blue",
+            "Green"
+        ],
+        "model": "Deluxe",
+        "product_name": "Herbal Shampoo"
+    },
+    {
+        "product_id": "P143",
+        "available_sizes": [
+            "L",
+            "M",
+            "XXL"
+        ],
+        "available_colors": [
+            "Yellow",
+            "White",
+            "Pink",
+            "Black",
+            "Blue",
+            "Red",
+            "Green"
+        ],
+        "model": "Deluxe",
+        "product_name": "Travel Backpack"
+    },
+    {
+        "product_id": "P144",
+        "available_sizes": [
+            "S",
+            "L",
+            "XL"
+        ],
+        "available_colors": [
+            "Green"
+        ],
+        "model": "Max",
+        "product_name": "Wireless Charger"
+    },
+    {
+        "product_id": "P145",
+        "available_sizes": [
+            "S",
+            "M",
+            "XL",
+            "XXL"
+        ],
+        "available_colors": [
+            "Pink"
+        ],
+        "model": "Max",
+        "product_name": "Cotton Bedsheet"
+    },
+    {
+        "product_id": "P146",
+        "available_sizes": [
+            "S"
+        ],
+        "available_colors": [
+            "Blue"
+        ],
+        "model": "Deluxe",
+        "product_name": "Digital Thermometer"
+    },
+    {
+        "product_id": "P147",
+        "available_sizes": [
+            "S",
+            "M",
+            "L"
+        ],
+        "available_colors": [
+            "Black",
+            "Red",
+            "Yellow",
+            "Blue",
+            "Pink"
+        ],
+        "model": "Pro",
+        "product_name": "Bluetooth Speaker"
+    },
+    {
+        "product_id": "P148",
+        "available_sizes": [
+            "S"
+        ],
+        "available_colors": [
+            "White",
+            "Black"
+        ],
+        "model": "Standard",
+        "product_name": "Running Shoes"
+    },
+    {
+        "product_id": "P149",
+        "available_sizes": [
+            "M",
+            "L",
+            "XXL",
+            "S"
+        ],
+        "available_colors": [
+            "Black",
+            "Blue",
+            "White"
+        ],
+        "model": "Lite",
+        "product_name": "Non-stick Frying Pan"
+    },
+    {
+        "product_id": "P150",
+        "available_sizes": [
+            "S"
+        ],
+        "available_colors": [
+            "Yellow",
+            "Red"
+        ],
+        "model": "Deluxe",
+        "product_name": "Face Moisturizer"
+    },
+    {
+        "product_id": "P151",
+        "available_sizes": [
+            "XL"
+        ],
+        "available_colors": [
+            "Blue",
+            "Pink",
+            "Black"
+        ],
+        "model": "Standard",
+        "product_name": "Office Chair"
+    },
+    {
+        "product_id": "P152",
+        "available_sizes": [
+            "XL"
+        ],
+        "available_colors": [
+            "Green",
+            "White",
+            "Red",
+            "Black",
+            "Yellow",
+            "Blue"
+        ],
+        "model": "Max",
+        "product_name": "Smartwatch"
+    },
+    {
+        "product_id": "P153",
+        "available_sizes": [
+            "M",
+            "XL",
+            "XXL",
+            "L"
+        ],
+        "available_colors": [
+            "Red",
+            "Pink",
+            "White",
+            "Blue"
+        ],
+        "model": "Lite",
+        "product_name": "Cotton Kurta"
+    },
+    {
+        "product_id": "P154",
+        "available_sizes": [
+            "XXL",
+            "M",
+            "XL"
+        ],
+        "available_colors": [
+            "Green",
+            "White",
+            "Black",
+            "Blue",
+            "Pink",
+            "Red"
+        ],
+        "model": "Standard",
+        "product_name": "Electric Kettle"
+    },
+    {
+        "product_id": "P155",
+        "available_sizes": [
+            "XXL",
+            "S"
+        ],
+        "available_colors": [
+            "Red",
+            "Yellow",
+            "Pink"
+        ],
+        "model": "Pro",
+        "product_name": "Hair Dryer"
+    },
+    {
+        "product_id": "P156",
+        "available_sizes": [
+            "S",
+            "M",
+            "XXL",
+            "XL"
+        ],
+        "available_colors": [
+            "Black",
+            "Blue",
+            "Red",
+            "Green",
+            "Pink"
+        ],
+        "model": "Max",
+        "product_name": "Wireless Earbuds"
+    },
+    {
+        "product_id": "P157",
+        "available_sizes": [
+            "XL",
+            "XXL",
+            "M",
+            "S",
+            "L"
+        ],
+        "available_colors": [
+            "Black",
+            "Red",
+            "Green",
+            "Pink"
+        ],
+        "model": "Standard",
+        "product_name": "Canvas Painting"
+    },
+    {
+        "product_id": "P158",
+        "available_sizes": [
+            "XL",
+            "L",
+            "M",
+            "S"
+        ],
+        "available_colors": [
+            "White",
+            "Yellow",
+            "Red"
+        ],
+        "model": "Lite",
+        "product_name": "Electric Toothbrush"
+    },
+    {
+        "product_id": "P159",
+        "available_sizes": [
+            "L",
+            "XL",
+            "XXL",
+            "S",
+            "M"
+        ],
+        "available_colors": [
+            "Yellow",
+            "Blue"
+        ],
+        "model": "Standard",
+        "product_name": "Men's Formal Shirt"
+    },
+    {
+        "product_id": "P160",
+        "available_sizes": [
+            "M"
+        ],
+        "available_colors": [
+            "Black",
+            "Green"
+        ],
+        "model": "Standard",
+        "product_name": "Laptop Cooling Pad"
+    },
+    {
+        "product_id": "P161",
+        "available_sizes": [
+            "L",
+            "XXL",
+            "XL",
+            "S"
+        ],
+        "available_colors": [
+            "Yellow",
+            "Blue",
+            "Pink",
+            "Red",
+            "White",
+            "Black",
+            "Green"
+        ],
+        "model": "Deluxe",
+        "product_name": "Pet Grooming Kit"
+    },
+    {
+        "product_id": "P162",
+        "available_sizes": [
+            "S"
+        ],
+        "available_colors": [
+            "Black",
+            "Green",
+            "Red",
+            "Yellow",
+            "Pink"
+        ],
+        "model": "Max",
+        "product_name": "Mini Projector"
+    },
+    {
+        "product_id": "P163",
+        "available_sizes": [
+            "M",
+            "XL",
+            "L",
+            "XXL",
+            "S"
+        ],
+        "available_colors": [
+            "Pink",
+            "Blue",
+            "Green",
+            "Yellow",
+            "White",
+            "Red",
+            "Black"
+        ],
+        "model": "Standard",
+        "product_name": "Bamboo Toothbrush Set"
+    },
+    {
+        "product_id": "P164",
+        "available_sizes": [
+            "XXL",
+            "M",
+            "XL",
+            "L"
+        ],
+        "available_colors": [
+            "Green",
+            "Red",
+            "Black",
+            "Blue"
+        ],
+        "model": "Pro",
+        "product_name": "Kids Story Book"
+    },
+    {
+        "product_id": "P165",
+        "available_sizes": [
+            "M",
+            "S"
+        ],
+        "available_colors": [
+            "Red",
+            "Blue",
+            "White",
+            "Black",
+            "Green",
+            "Pink",
+            "Yellow"
+        ],
+        "model": "Standard",
+        "product_name": "Car Phone Mount"
+    },
+    {
+        "product_id": "P166",
+        "available_sizes": [
+            "XL"
+        ],
+        "available_colors": [
+            "White",
+            "Pink",
+            "Red",
+            "Green",
+            "Yellow"
+        ],
+        "model": "Pro",
+        "product_name": "Scented Candles Pack"
+    },
+    {
+        "product_id": "P167",
+        "available_sizes": [
+            "XXL"
+        ],
+        "available_colors": [
+            "Yellow",
+            "Green",
+            "Black",
+            "Pink",
+            "Red",
+            "White"
+        ],
+        "model": "Lite",
+        "product_name": "Smart Light Bulb"
+    },
+    {
+        "product_id": "P168",
+        "available_sizes": [
+            "L",
+            "XXL",
+            "M",
+            "XL",
+            "S"
+        ],
+        "available_colors": [
+            "Blue",
+            "Green",
+            "White",
+            "Black",
+            "Red"
+        ],
+        "model": "Max",
+        "product_name": "Digital Drawing Tablet"
+    },
+    {
+        "product_id": "P169",
+        "available_sizes": [
+            "L",
+            "S",
+            "XL",
+            "XXL",
+            "M"
+        ],
+        "available_colors": [
+            "Red"
+        ],
+        "model": "Pro",
+        "product_name": "Reusable Grocery Bags"
+    },
+    {
+        "product_id": "P170",
+        "available_sizes": [
+            "M",
+            "XXL",
+            "XL",
+            "S",
+            "L"
+        ],
+        "available_colors": [
+            "Pink",
+            "Green",
+            "Blue",
+            "Yellow",
+            "Black"
+        ],
+        "model": "Max",
+        "product_name": "Noise Cancelling Headphones"
+    },
+    {
+        "product_id": "P171",
+        "available_sizes": [
+            "XXL",
+            "XL",
+            "L"
+        ],
+        "available_colors": [
+            "Yellow",
+            "Pink",
+            "Green",
+            "Black",
+            "Red",
+            "Blue",
+            "White"
+        ],
+        "model": "Max",
+        "product_name": "Portable Blender"
+    },
+    {
+        "product_id": "P172",
+        "available_sizes": [
+            "S",
+            "XXL"
+        ],
+        "available_colors": [
+            "Pink",
+            "Red"
+        ],
+        "model": "Pro",
+        "product_name": "Men's Leather Belt"
+    },
+    {
+        "product_id": "P173",
+        "available_sizes": [
+            "S",
+            "L",
+            "XXL",
+            "M",
+            "XL"
+        ],
+        "available_colors": [
+            "White",
+            "Yellow",
+            "Red",
+            "Blue"
+        ],
+        "model": "Pro",
+        "product_name": "Smart Plug"
+    },
+    {
+        "product_id": "P174",
+        "available_sizes": [
+            "XXL"
+        ],
+        "available_colors": [
+            "Pink",
+            "Green",
+            "Blue",
+            "Black",
+            "Red",
+            "White"
+        ],
+        "model": "Deluxe",
+        "product_name": "Children's Puzzle Set"
+    },
+    {
+        "product_id": "P175",
+        "available_sizes": [
+            "L",
+            "XL",
+            "M",
+            "S"
+        ],
+        "available_colors": [
+            "Black",
+            "Pink",
+            "White",
+            "Green",
+            "Red"
+        ],
+        "model": "Max",
+        "product_name": "Electric Rice Cooker"
+    },
+    {
+        "product_id": "P176",
+        "available_sizes": [
+            "XL",
+            "L"
+        ],
+        "available_colors": [
+            "Yellow",
+            "White",
+            "Red",
+            "Green",
+            "Black",
+            "Blue",
+            "Pink"
+        ],
+        "model": "Lite",
+        "product_name": "Women's Handbag"
+    },
+    {
+        "product_id": "P177",
+        "available_sizes": [
+            "M",
+            "XL",
+            "L"
+        ],
+        "available_colors": [
+            "Green"
+        ],
+        "model": "Standard",
+        "product_name": "Wireless Keyboard"
+    },
+    {
+        "product_id": "P178",
+        "available_sizes": [
+            "M",
+            "XXL",
+            "S",
+            "XL"
+        ],
+        "available_colors": [
+            "Pink",
+            "Red",
+            "Yellow",
+            "White"
+        ],
+        "model": "Lite",
+        "product_name": "Aromatherapy Diffuser"
+    },
+    {
+        "product_id": "P179",
+        "available_sizes": [
+            "XL",
+            "XXL",
+            "S",
+            "L",
+            "M"
+        ],
+        "available_colors": [
+            "Pink",
+            "Green",
+            "Blue",
+            "Yellow",
+            "Black",
+            "White",
+            "Red"
+        ],
+        "model": "Pro",
+        "product_name": "Laptop Stand"
+    },
+    {
+        "product_id": "P180",
+        "available_sizes": [
+            "M",
+            "S",
+            "XL"
+        ],
+        "available_colors": [
+            "Blue",
+            "White",
+            "Red",
+            "Black"
+        ],
+        "model": "Max",
+        "product_name": "Cotton Bath Towel"
+    },
+    {
+        "product_id": "P181",
+        "available_sizes": [
+            "XL",
+            "S"
+        ],
+        "available_colors": [
+            "Green",
+            "White",
+            "Blue",
+            "Red"
+        ],
+        "model": "Max",
+        "product_name": "Digital Alarm Clock"
+    },
+    {
+        "product_id": "P182",
+        "available_sizes": [
+            "XXL"
+        ],
+        "available_colors": [
+            "Red",
+            "Pink",
+            "White",
+            "Green"
+        ],
+        "model": "Deluxe",
+        "product_name": "Men's Sports Watch"
+    },
+    {
+        "product_id": "P183",
+        "available_sizes": [
+            "M",
+            "S",
+            "L",
+            "XL",
+            "XXL"
+        ],
+        "available_colors": [
+            "Red",
+            "Yellow",
+            "Green",
+            "Pink",
+            "Black",
+            "White",
+            "Blue"
+        ],
+        "model": "Standard",
+        "product_name": "Reusable Water Filter"
+    },
+    {
+        "product_id": "P184",
+        "available_sizes": [
+            "M"
+        ],
+        "available_colors": [
+            "Red",
+            "Pink",
+            "Black",
+            "White",
+            "Green",
+            "Yellow"
+        ],
+        "model": "Lite",
+        "product_name": "Kids Drawing Book"
+    },
+    {
+        "product_id": "P185",
+        "available_sizes": [
+            "M",
+            "S",
+            "XL",
+            "L",
+            "XXL"
+        ],
+        "available_colors": [
+            "Red"
+        ],
+        "model": "Lite",
+        "product_name": "Car Vacuum Cleaner"
+    },
+    {
+        "product_id": "P186",
+        "available_sizes": [
+            "S",
+            "M",
+            "XL"
+        ],
+        "available_colors": [
+            "Blue",
+            "Black"
+        ],
+        "model": "Lite",
+        "product_name": "LED Strip Lights"
+    },
+    {
+        "product_id": "P187",
+        "available_sizes": [
+            "XL",
+            "S"
+        ],
+        "available_colors": [
+            "Pink",
+            "Red",
+            "White",
+            "Black",
+            "Green",
+            "Blue"
+        ],
+        "model": "Pro",
+        "product_name": "Women's Flip Flops"
+    },
+    {
+        "product_id": "P188",
+        "available_sizes": [
+            "L",
+            "XXL",
+            "M",
+            "S",
+            "XL"
+        ],
+        "available_colors": [
+            "Green",
+            "White",
+            "Yellow",
+            "Blue"
+        ],
+        "model": "Lite",
+        "product_name": "Smart Doorbell"
+    },
+    {
+        "product_id": "P189",
+        "available_sizes": [
+            "S",
+            "XL",
+            "XXL",
+            "L"
+        ],
+        "available_colors": [
+            "Green",
+            "Blue",
+            "Red",
+            "Black",
+            "White",
+            "Pink"
+        ],
+        "model": "Max",
+        "product_name": "Electric Hair Trimmer"
+    },
+    {
+        "product_id": "P190",
+        "available_sizes": [
+            "L"
+        ],
+        "available_colors": [
+            "Red",
+            "White",
+            "Yellow"
+        ],
+        "model": "Max",
+        "product_name": "Insulated Lunch Box"
+    }
+]

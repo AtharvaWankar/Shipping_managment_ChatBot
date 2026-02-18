@@ -1,0 +1,183 @@
+Certainly! Here is the detailed information from the data you provided, presented in a theoretical text format:
+
+***
+
+**Customer Order Details**
+
+1. **Customer:** John Doe (User ID: U567)  
+   - Ordered Product ID: P123 (Quantity: 1) on 2024-05-03  
+   - Bill Paid: 1299  
+   - Delivery Date: 2024-05-07  
+   - Delivery Status: Delivered  
+
+2. **Customer:** Priya Sharma (User ID: U568)  
+   - Ordered Product ID: P144 (Quantity: 2) on 2024-06-10  
+   - Bill Paid: 2798  
+   - Delivery Date: 2024-06-14  
+   - Delivery Status: In Transit  
+
+3. **Customer:** Ahmed Khan (User ID: U569)  
+   - Ordered Product ID: P175 (Quantity: 1) on 2024-07-01  
+   - Bill Paid: 2499  
+   - Delivery Date: 2024-07-08  
+   - Delivery Status: Delayed  
+
+4. **Customer:** Emily Zhang (User ID: U570)  
+   - Ordered Product ID: P157 (Quantity: 1) on 2024-04-15  
+   - Bill Paid: 1999  
+   - Delivery Date: Not available  
+   - Delivery Status: Cancelled  
+
+5. **Customer:** Ravi Kumar (User ID: U571)  
+   - Ordered Product ID: P150 (Quantity: 1) on 2024-03-20  
+   - Bill Paid: 499  
+   - Delivery Date: 2024-03-25  
+   - Delivery Status: Returned  
+
+6. **Customer:** Sara Lee (User ID: U572)  
+   - Ordered Product ID: P176 (Quantity: 1) on 2024-08-01  
+   - Bill Paid: 1899  
+   - Delivery Date: 2024-08-06  
+   - Delivery Status: Exchanged  
+
+7. **Customer:** Karan Mehta (User ID: U573)  
+   - Ordered Product IDs: P148 (Quantity: 1), P149 (Quantity: 2) on 2024-09-10  
+   - Bill Paid: 4097  
+   - Delivery Date: 2024-09-15  
+   - Delivery Status: Delivered  
+
+8. **Customer:** Lina George (User ID: U574)  
+   - Ordered Product ID: P188 (Quantity: 1) on 2024-10-05  
+   - Bill Paid: 3299  
+   - Delivery Date: Not available  
+   - Delivery Status: Pending Dispatch  
+
+9. **Customer:** David Park (User ID: U575)  
+   - Ordered Product IDs: P160 (Quantity: 1), P161 (Quantity: 1) on 2024-11-01  
+   - Bill Paid: 2098  
+   - Delivery Date: 2024-11-06  
+   - Delivery Status: Partially Delivered  
+
+10. **Customer:** Ananya Reddy (User ID: U576)  
+    - Ordered Product ID: P170 (Quantity: 1) on 2024-12-12  
+    - Bill Paid: 3999  
+    - Delivery Date: 2024-12-17  
+    - Delivery Status: Delivered  
+
+11. **Customer:** Meera Joshi (User ID: U577)  
+    - Ordered Product ID: P145 (Quantity: 1) on 2024-06-01  
+    - Bill Paid: 999  
+    - Delivery Date: 2024-06-05  
+    - Delivery Status: Delivered  
+
+12. **Customer:** Tom Wilson (User ID: U578)  
+    - Ordered Product ID: P152 (Quantity: 1) on 2024-06-10  
+    - Bill Paid: 3499  
+    - Delivery Date: 2024-06-15  
+    - Delivery Status: In Transit  
+
+13. **Customer:** Nisha Patel (User ID: U579)  
+    - Ordered Product ID: P153 (Quantity: 2) on 2024-07-02  
+    - Bill Paid: 1798  
+    - Delivery Date: 2024-07-09  
+    - Delivery Status: Delayed  
+
+14. **Customer:** George Brown (User ID: U580)  
+    - Ordered Product ID: P154 (Quantity: 1) on 2024-07-15  
+    - Bill Paid: 1299  
+    - Delivery Date: Not available  
+    - Delivery Status: Cancelled  
+
+15. **Customer:** Ayesha Siddiqui (User ID: U581)  
+    - Ordered Product ID: P155 (Quantity: 1) on 2024-08-01  
+    - Bill Paid: 1499  
+    - Delivery Date: 2024-08-06  
+    - Delivery Status: Returned  
+
+16. **Customer:** Carlos Mendes (User ID: U582)  
+    - Ordered Product ID: P156 (Quantity: 1) on 2024-08-10  
+    - Bill Paid: 2999  
+    - Delivery Date: 2024-08-15  
+    - Delivery Status: Exchanged  
+
+17. **Customer:** Sneha Verma (User ID: U583)  
+    - Ordered Product IDs: P158 (Quantity: 1), P159 (Quantity: 1) on 2024-09-01  
+    - Bill Paid: 1598  
+    - Delivery Date: 2024-09-06  
+    - Delivery Status: Delivered  
+
+18. **Customer:** Daniel Kim (User ID: U584)  
+    - Ordered Product ID: P162 (Quantity: 1) on 2024-09-15  
+    - Bill Paid: 4999  
+    - Delivery Date: Not available  
+    - Delivery Status: Pending Dispatch  
+
+19. **Customer:** Ritika Nair (User ID: U585)  
+    - Ordered Product IDs: P163 (Quantity: 2), P164 (Quantity: 1) on 2024-10-01  
+    - Bill Paid: 997  
+    - Delivery Date: 2024-10-06  
+    - Delivery Status: Partially Delivered  
+
+20. **Customer:** Mohit Jain (User ID: U586)  
+    - Ordered Product ID: P165 (Quantity: 1) on 2024-10-10  
+    - Bill Paid: 499  
+    - Delivery Date: 2024-10-14  
+    - Delivery Status: Delivered  
+
+21. **Customer:** Linda Thomas (User ID: U587)  
+    - Ordered Product ID: P166 (Quantity: 1) on 2024-11-01  
+    - Bill Paid: 899  
+    - Delivery Date: 2024-11-06  
+    - Delivery Status: In Transit  
+
+22. **Customer:** Rajesh Pillai (User ID: U588)  
+    - Ordered Product ID: P167 (Quantity: 1) on 2024-11-10  
+    - Bill Paid: 1199  
+    - Delivery Date: 2024-11-15  
+    - Delivery Status: Delayed  
+
+23. **Customer:** Emily Carter (User ID: U589)  
+    - Ordered Product ID: P168 (Quantity: 1) on 2024-11-20  
+    - Bill Paid: 3499  
+    - Delivery Date: Not available  
+    - Delivery Status: Cancelled  
+
+24. **Customer:** Arjun Desai (User ID: U590)  
+    - Ordered Product ID: P169 (Quantity: 3) on 2024-12-01  
+    - Bill Paid: 1797  
+    - Delivery Date: 2024-12-06  
+    - Delivery Status: Returned  
+
+25. **Customer:** Natalie Brooks (User ID: U591)  
+    - Ordered Product ID: P170 (Quantity: 1) on 2024-12-10  
+    - Bill Paid: 3999  
+    - Delivery Date: 2024-12-15  
+    - Delivery Status: Exchanged  
+
+26. **Customer:** Vikram Singh (User ID: U592)  
+    - Ordered Product IDs: P171 (Quantity: 1), P172 (Quantity: 1) on 2025-01-01  
+    - Bill Paid: 2298  
+    - Delivery Date: 2025-01-06  
+    - Delivery Status: Delivered  
+
+27. **Customer:** Tanya Roy (User ID: U593)  
+    - Ordered Product ID: P173 (Quantity: 1) on 2025-01-10  
+    - Bill Paid: 999  
+    - Delivery Date: Not available  
+    - Delivery Status: Pending Dispatch  
+
+28. **Customer:** Jason Lee (User ID: U594)  
+    - Ordered Product IDs: P174 (Quantity: 2), P175 (Quantity: 1) on 2025-01-15  
+    - Bill Paid: 3497  
+    - Delivery Date: 2025-01-20  
+    - Delivery Status: Partially Delivered  
+
+29. **Customer:** Neha Kapoor (User ID: U595)  
+    - Ordered Product ID: P176 (Quantity: 1) on 2025-01-20  
+    - Bill Paid: 1899  
+    - Delivery Date: 2025-01-25  
+    - Delivery Status: Delivered  
+
+***
+
+If you want, I can save these details to a .txt file for you. Just let me know!

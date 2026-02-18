@@ -1,0 +1,402 @@
+[
+  {
+    "product": "Headphones",
+    "rating": 3,
+    "comment": "Very good",
+    "date": "2022-11-25 22:57:31",
+    "user_id": "U500",
+    "user_name": "Aarav Nair"
+  },
+  {
+    "product": "Keyboard",
+    "rating": 5,
+    "comment": "Poor",
+    "date": "2022-09-09 20:04:10",
+    "user_id": "U501",
+    "user_name": "Anaya Joshi"
+  },
+  {
+    "product": "Speaker",
+    "rating": 5,
+    "comment": "Average",
+    "date": "2023-12-20 14:32:23",
+    "user_id": "U502",
+    "user_name": "Ayaan Reddy"
+  },
+  {
+    "product": "Monitor",
+    "rating": 3,
+    "comment": "Very good",
+    "date": "2023-12-07 23:55:48",
+    "user_id": "U503",
+    "user_name": "Vivaan Mehta"
+  },
+  {
+    "product": "Smartphone",
+    "rating": 2,
+    "comment": "Poor",
+    "date": "2023-08-01 17:54:15",
+    "user_id": "U504",
+    "user_name": "Sai Joshi"
+  },
+  {
+    "product": "Monitor",
+    "rating": 3,
+    "comment": "Average",
+    "date": "2022-10-08 00:59:55",
+    "user_id": "U505",
+    "user_name": "Sai Reddy"
+  },
+  {
+    "product": "Keyboard",
+    "rating": 1,
+    "comment": "Average",
+    "date": "2022-12-12 20:04:52",
+    "user_id": "U506",
+    "user_name": "Vivaan Joshi"
+  },
+  {
+    "product": "Laptop",
+    "rating": 2,
+    "comment": "Average",
+    "date": "2022-08-15 03:01:47",
+    "user_id": "U507",
+    "user_name": "Diya Kumar"
+  },
+  {
+    "product": "Headphones",
+    "rating": 4,
+    "comment": "Poor",
+    "date": "2023-05-03 04:37:46",
+    "user_id": "U508",
+    "user_name": "Myra Sharma"
+  },
+  {
+    "product": "Speaker",
+    "rating": 4,
+    "comment": "Very good",
+    "date": "2023-05-22 16:41:25",
+    "user_id": "U509",
+    "user_name": "Sai Patel"
+  },
+  {
+    "product": "Laptop",
+    "rating": 5,
+    "comment": "Excellent!",
+    "date": "2022-11-22 07:54:42",
+    "user_id": "U510",
+    "user_name": "Anika Verma"
+  },
+  {
+    "product": "Tablet",
+    "rating": 4,
+    "comment": "Average",
+    "date": "2022-05-01 23:37:22",
+    "user_id": "U511",
+    "user_name": "Arjun Reddy"
+  },
+  {
+    "product": "Mouse",
+    "rating": 2,
+    "comment": "Excellent!",
+    "date": "2023-05-21 00:54:12",
+    "user_id": "U512",
+    "user_name": "Anika Kapoor"
+  },
+  {
+    "product": "Headphones",
+    "rating": 4,
+    "comment": "Terrible",
+    "date": "2022-03-22 04:25:41",
+    "user_id": "U513",
+    "user_name": "Diya Kumar"
+  },
+  {
+    "product": "Headphones",
+    "rating": 4,
+    "comment": "Poor",
+    "date": "2023-07-19 18:39:39",
+    "user_id": "U514",
+    "user_name": "Avni Reddy"
+  },
+  {
+    "product": "Headphones",
+    "rating": 2,
+    "comment": "Average",
+    "date": "2023-08-15 03:01:01",
+    "user_id": "U515",
+    "user_name": "Anika Reddy"
+  },
+  {
+    "product": "Monitor",
+    "rating": 3,
+    "comment": "Very good",
+    "date": "2022-11-11 17:21:18",
+    "user_id": "U516",
+    "user_name": "Avni Gupta"
+  },
+  {
+    "product": "Speaker",
+    "rating": 1,
+    "comment": "Excellent!",
+    "date": "2022-04-07 16:58:04",
+    "user_id": "U517",
+    "user_name": "Siya Kumar"
+  },
+  {
+    "product": "Speaker",
+    "rating": 3,
+    "comment": "Very good",
+    "date": "2023-01-10 10:07:06",
+    "user_id": "U518",
+    "user_name": "Myra Patel"
+  },
+  {
+    "product": "Laptop",
+    "rating": 2,
+    "comment": "Very good",
+    "date": "2023-07-16 04:54:22",
+    "user_id": "U519",
+    "user_name": "Vivaan Nair"
+  },
+  {
+    "product": "Speaker",
+    "rating": 1,
+    "comment": "Excellent!",
+    "date": "2022-10-23 06:43:18",
+    "user_id": "U520",
+    "user_name": "Meera Gupta"
+  },
+  {
+    "product": "Headphones",
+    "rating": 1,
+    "comment": "Average",
+    "date": "2023-03-27 17:06:27",
+    "user_id": "U521",
+    "user_name": "Sai Joshi"
+  },
+  {
+    "product": "Laptop",
+    "rating": 5,
+    "comment": "Very good",
+    "date": "2022-11-11 06:15:52",
+    "user_id": "U522",
+    "user_name": "Aadhya Mehta"
+  },
+  {
+    "product": "Tablet",
+    "rating": 5,
+    "comment": "Very good",
+    "date": "2022-03-25 11:09:53",
+    "user_id": "U523",
+    "user_name": "Arjun Reddy"
+  },
+  {
+    "product": "Smartphone",
+    "rating": 3,
+    "comment": "Poor",
+    "date": "2022-05-20 19:07:52",
+    "user_id": "U524",
+    "user_name": "Anaya Verma"
+  },
+  {
+    "product": "Camera",
+    "rating": 2,
+    "comment": "Excellent!",
+    "date": "2022-12-22 20:41:14",
+    "user_id": "U525",
+    "user_name": "Myra Gupta"
+  },
+  {
+    "product": "Headphones",
+    "rating": 1,
+    "comment": "Excellent!",
+    "date": "2022-09-11 07:01:27",
+    "user_id": "U526",
+    "user_name": "Anaya Kumar"
+  },
+  {
+    "product": "Mouse",
+    "rating": 1,
+    "comment": "Very good",
+    "date": "2023-07-12 14:19:12",
+    "user_id": "U527",
+    "user_name": "Saanvi Sharma"
+  },
+  {
+    "product": "Mouse",
+    "rating": 1,
+    "comment": "Terrible",
+    "date": "2022-12-17 22:37:59",
+    "user_id": "U528",
+    "user_name": "Anika Mehta"
+  },
+  {
+    "product": "Mouse",
+    "rating": 3,
+    "comment": "Terrible",
+    "date": "2022-01-19 05:02:31",
+    "user_id": "U529",
+    "user_name": "Aditya Joshi"
+  },
+  {
+    "product": "Camera",
+    "rating": 5,
+    "comment": "Very good",
+    "date": "2022-05-05 00:01:39",
+    "user_id": "U530",
+    "user_name": "Vivaan Joshi"
+  },
+  {
+    "product": "Laptop",
+    "rating": 5,
+    "comment": "Very good",
+    "date": "2022-02-01 03:33:35",
+    "user_id": "U531",
+    "user_name": "Arjun Gupta"
+  },
+  {
+    "product": "Laptop",
+    "rating": 2,
+    "comment": "Very good",
+    "date": "2022-12-16 11:38:46",
+    "user_id": "U532",
+    "user_name": "Anaya Joshi"
+  },
+  {
+    "product": "Speaker",
+    "rating": 1,
+    "comment": "Terrible",
+    "date": "2023-11-15 15:59:31",
+    "user_id": "U533",
+    "user_name": "Priya Mehta"
+  },
+  {
+    "product": "Mouse",
+    "rating": 4,
+    "comment": "Poor",
+    "date": "2022-10-19 11:56:51",
+    "user_id": "U534",
+    "user_name": "Sai Reddy"
+  },
+  {
+    "product": "Mouse",
+    "rating": 1,
+    "comment": "Excellent!",
+    "date": "2022-04-26 07:32:05",
+    "user_id": "U535",
+    "user_name": "Saanvi Gupta"
+  },
+  {
+    "product": "Laptop",
+    "rating": 4,
+    "comment": "Very good",
+    "date": "2023-08-20 23:12:59",
+    "user_id": "U536",
+    "user_name": "Anika Patel"
+  },
+  {
+    "product": "Monitor",
+    "rating": 3,
+    "comment": "Terrible",
+    "date": "2023-12-08 16:29:35",
+    "user_id": "U537",
+    "user_name": "Aditya Reddy"
+  },
+  {
+    "product": "Smartphone",
+    "rating": 3,
+    "comment": "Terrible",
+    "date": "2023-05-04 20:55:34",
+    "user_id": "U538",
+    "user_name": "Arjun Reddy"
+  },
+  {
+    "product": "Tablet",
+    "rating": 2,
+    "comment": "Average",
+    "date": "2023-11-17 14:13:29",
+    "user_id": "U539",
+    "user_name": "Meera Reddy"
+  },
+  {
+    "product": "Keyboard",
+    "rating": 5,
+    "comment": "Very good",
+    "date": "2022-09-29 02:15:28",
+    "user_id": "U540",
+    "user_name": "Vivaan Kumar"
+  },
+  {
+    "product": "Mouse",
+    "rating": 2,
+    "comment": "Terrible",
+    "date": "2022-08-20 21:30:07",
+    "user_id": "U541",
+    "user_name": "Saanvi Kapoor"
+  },
+  {
+    "product": "Camera",
+    "rating": 3,
+    "comment": "Very good",
+    "date": "2023-04-01 14:44:09",
+    "user_id": "U542",
+    "user_name": "Siya Reddy"
+  },
+  {
+    "product": "Camera",
+    "rating": 3,
+    "comment": "Excellent!",
+    "date": "2022-05-12 18:14:02",
+    "user_id": "U543",
+    "user_name": "Ayaan Patel"
+  },
+  {
+    "product": "Monitor",
+    "rating": 4,
+    "comment": "Average",
+    "date": "2023-12-24 23:49:33",
+    "user_id": "U544",
+    "user_name": "Diya Joshi"
+  },
+  {
+    "product": "Camera",
+    "rating": 2,
+    "comment": "Average",
+    "date": "2023-10-25 23:11:15",
+    "user_id": "U545",
+    "user_name": "Vihaan Kapoor"
+  },
+  {
+    "product": "Smartwatch",
+    "rating": 4,
+    "comment": "Excellent!",
+    "date": "2022-10-03 13:35:21",
+    "user_id": "U546",
+    "user_name": "Anaya Gupta"
+  },
+  {
+    "product": "Headphones",
+    "rating": 1,
+    "comment": "Average",
+    "date": "2023-04-27 03:06:53",
+    "user_id": "U547",
+    "user_name": "Sai Verma"
+  },
+  {
+    "product": "Speaker",
+    "rating": 1,
+    "comment": "Terrible",
+    "date": "2023-04-02 22:51:52",
+    "user_id": "U548",
+    "user_name": "Vihaan Mehta"
+  },
+  {
+    "product": "Camera",
+    "rating": 5,
+    "comment": "Terrible",
+    "date": "2022-09-01 15:19:31",
+    "user_id": "U549",
+    "user_name": "Ishaan Patel"
+  }
+]

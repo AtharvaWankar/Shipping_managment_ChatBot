@@ -1,0 +1,402 @@
+[
+  {
+    "type": "resolution",
+    "subject": "Product defect",
+    "status": "pending",
+    "date": "2023-12-21 20:50:45",
+    "user_id": "U500",
+    "user_name": "Aarav Nair"
+  },
+  {
+    "type": "resolution",
+    "subject": "General question",
+    "status": "closed",
+    "date": "2022-10-15 12:10:25",
+    "user_id": "U501",
+    "user_name": "Anaya Joshi"
+  },
+  {
+    "type": "inquiry",
+    "subject": "General question",
+    "status": "open",
+    "date": "2022-06-06 14:39:01",
+    "user_id": "U502",
+    "user_name": "Ayaan Reddy"
+  },
+  {
+    "type": "complaint",
+    "subject": "Refund request",
+    "status": "pending",
+    "date": "2023-06-27 16:15:30",
+    "user_id": "U503",
+    "user_name": "Vivaan Mehta"
+  },
+  {
+    "type": "complaint",
+    "subject": "Late delivery",
+    "status": "open",
+    "date": "2022-05-11 20:40:55",
+    "user_id": "U504",
+    "user_name": "Sai Joshi"
+  },
+  {
+    "type": "inquiry",
+    "subject": "Account issue",
+    "status": "closed",
+    "date": "2023-01-27 15:09:29",
+    "user_id": "U505",
+    "user_name": "Sai Reddy"
+  },
+  {
+    "type": "complaint",
+    "subject": "General question",
+    "status": "open",
+    "date": "2022-11-12 19:13:10",
+    "user_id": "U506",
+    "user_name": "Vivaan Joshi"
+  },
+  {
+    "type": "resolution",
+    "subject": "Product defect",
+    "status": "closed",
+    "date": "2022-02-04 14:41:36",
+    "user_id": "U507",
+    "user_name": "Diya Kumar"
+  },
+  {
+    "type": "inquiry",
+    "subject": "Product defect",
+    "status": "closed",
+    "date": "2022-06-29 23:51:39",
+    "user_id": "U508",
+    "user_name": "Myra Sharma"
+  },
+  {
+    "type": "resolution",
+    "subject": "Product defect",
+    "status": "open",
+    "date": "2022-04-11 11:03:23",
+    "user_id": "U509",
+    "user_name": "Sai Patel"
+  },
+  {
+    "type": "resolution",
+    "subject": "Late delivery",
+    "status": "pending",
+    "date": "2023-11-15 13:48:55",
+    "user_id": "U510",
+    "user_name": "Anika Verma"
+  },
+  {
+    "type": "resolution",
+    "subject": "Refund request",
+    "status": "open",
+    "date": "2022-07-21 04:35:28",
+    "user_id": "U511",
+    "user_name": "Arjun Reddy"
+  },
+  {
+    "type": "resolution",
+    "subject": "Late delivery",
+    "status": "open",
+    "date": "2023-01-15 20:52:01",
+    "user_id": "U512",
+    "user_name": "Anika Kapoor"
+  },
+  {
+    "type": "resolution",
+    "subject": "Refund request",
+    "status": "closed",
+    "date": "2023-11-29 13:05:37",
+    "user_id": "U513",
+    "user_name": "Diya Kumar"
+  },
+  {
+    "type": "complaint",
+    "subject": "Late delivery",
+    "status": "open",
+    "date": "2022-07-07 12:08:28",
+    "user_id": "U514",
+    "user_name": "Avni Reddy"
+  },
+  {
+    "type": "resolution",
+    "subject": "Late delivery",
+    "status": "open",
+    "date": "2022-09-02 03:56:02",
+    "user_id": "U515",
+    "user_name": "Anika Reddy"
+  },
+  {
+    "type": "complaint",
+    "subject": "Late delivery",
+    "status": "closed",
+    "date": "2022-08-03 16:59:15",
+    "user_id": "U516",
+    "user_name": "Avni Gupta"
+  },
+  {
+    "type": "inquiry",
+    "subject": "Account issue",
+    "status": "open",
+    "date": "2022-09-26 07:15:59",
+    "user_id": "U517",
+    "user_name": "Siya Kumar"
+  },
+  {
+    "type": "complaint",
+    "subject": "Late delivery",
+    "status": "closed",
+    "date": "2023-08-03 00:29:48",
+    "user_id": "U518",
+    "user_name": "Myra Patel"
+  },
+  {
+    "type": "inquiry",
+    "subject": "Late delivery",
+    "status": "closed",
+    "date": "2022-07-12 15:42:27",
+    "user_id": "U519",
+    "user_name": "Vivaan Nair"
+  },
+  {
+    "type": "resolution",
+    "subject": "General question",
+    "status": "open",
+    "date": "2023-03-14 01:49:12",
+    "user_id": "U520",
+    "user_name": "Meera Gupta"
+  },
+  {
+    "type": "resolution",
+    "subject": "Product defect",
+    "status": "closed",
+    "date": "2023-02-13 14:08:18",
+    "user_id": "U521",
+    "user_name": "Sai Joshi"
+  },
+  {
+    "type": "resolution",
+    "subject": "Account issue",
+    "status": "open",
+    "date": "2023-02-07 22:35:17",
+    "user_id": "U522",
+    "user_name": "Aadhya Mehta"
+  },
+  {
+    "type": "complaint",
+    "subject": "Refund request",
+    "status": "pending",
+    "date": "2022-01-26 10:01:56",
+    "user_id": "U523",
+    "user_name": "Arjun Reddy"
+  },
+  {
+    "type": "complaint",
+    "subject": "General question",
+    "status": "open",
+    "date": "2023-05-22 00:32:01",
+    "user_id": "U524",
+    "user_name": "Anaya Verma"
+  },
+  {
+    "type": "complaint",
+    "subject": "Refund request",
+    "status": "closed",
+    "date": "2023-07-27 01:55:53",
+    "user_id": "U525",
+    "user_name": "Myra Gupta"
+  },
+  {
+    "type": "resolution",
+    "subject": "General question",
+    "status": "closed",
+    "date": "2022-04-29 21:18:05",
+    "user_id": "U526",
+    "user_name": "Anaya Kumar"
+  },
+  {
+    "type": "resolution",
+    "subject": "Account issue",
+    "status": "open",
+    "date": "2023-07-03 23:41:07",
+    "user_id": "U527",
+    "user_name": "Saanvi Sharma"
+  },
+  {
+    "type": "resolution",
+    "subject": "Late delivery",
+    "status": "pending",
+    "date": "2022-01-23 20:53:55",
+    "user_id": "U528",
+    "user_name": "Anika Mehta"
+  },
+  {
+    "type": "complaint",
+    "subject": "Account issue",
+    "status": "pending",
+    "date": "2022-11-11 09:09:42",
+    "user_id": "U529",
+    "user_name": "Aditya Joshi"
+  },
+  {
+    "type": "resolution",
+    "subject": "General question",
+    "status": "open",
+    "date": "2022-06-22 18:28:00",
+    "user_id": "U530",
+    "user_name": "Vivaan Joshi"
+  },
+  {
+    "type": "inquiry",
+    "subject": "Account issue",
+    "status": "closed",
+    "date": "2022-01-04 21:40:30",
+    "user_id": "U531",
+    "user_name": "Arjun Gupta"
+  },
+  {
+    "type": "complaint",
+    "subject": "Refund request",
+    "status": "closed",
+    "date": "2022-12-06 16:04:59",
+    "user_id": "U532",
+    "user_name": "Anaya Joshi"
+  },
+  {
+    "type": "inquiry",
+    "subject": "Account issue",
+    "status": "closed",
+    "date": "2023-06-16 14:51:30",
+    "user_id": "U533",
+    "user_name": "Priya Mehta"
+  },
+  {
+    "type": "complaint",
+    "subject": "General question",
+    "status": "open",
+    "date": "2023-05-11 09:21:31",
+    "user_id": "U534",
+    "user_name": "Sai Reddy"
+  },
+  {
+    "type": "inquiry",
+    "subject": "Account issue",
+    "status": "pending",
+    "date": "2022-01-10 13:34:50",
+    "user_id": "U535",
+    "user_name": "Saanvi Gupta"
+  },
+  {
+    "type": "complaint",
+    "subject": "Account issue",
+    "status": "closed",
+    "date": "2023-07-28 13:57:00",
+    "user_id": "U536",
+    "user_name": "Anika Patel"
+  },
+  {
+    "type": "resolution",
+    "subject": "Account issue",
+    "status": "open",
+    "date": "2023-07-19 06:32:24",
+    "user_id": "U537",
+    "user_name": "Aditya Reddy"
+  },
+  {
+    "type": "resolution",
+    "subject": "Late delivery",
+    "status": "pending",
+    "date": "2023-05-08 23:01:45",
+    "user_id": "U538",
+    "user_name": "Arjun Reddy"
+  },
+  {
+    "type": "inquiry",
+    "subject": "General question",
+    "status": "pending",
+    "date": "2022-06-24 15:40:35",
+    "user_id": "U539",
+    "user_name": "Meera Reddy"
+  },
+  {
+    "type": "complaint",
+    "subject": "Late delivery",
+    "status": "closed",
+    "date": "2022-07-27 21:21:56",
+    "user_id": "U540",
+    "user_name": "Vivaan Kumar"
+  },
+  {
+    "type": "complaint",
+    "subject": "Account issue",
+    "status": "open",
+    "date": "2022-07-02 23:33:00",
+    "user_id": "U541",
+    "user_name": "Saanvi Kapoor"
+  },
+  {
+    "type": "inquiry",
+    "subject": "Refund request",
+    "status": "closed",
+    "date": "2022-01-06 23:31:52",
+    "user_id": "U542",
+    "user_name": "Siya Reddy"
+  },
+  {
+    "type": "inquiry",
+    "subject": "Late delivery",
+    "status": "pending",
+    "date": "2023-04-21 10:42:52",
+    "user_id": "U543",
+    "user_name": "Ayaan Patel"
+  },
+  {
+    "type": "resolution",
+    "subject": "General question",
+    "status": "open",
+    "date": "2022-07-09 02:40:07",
+    "user_id": "U544",
+    "user_name": "Diya Joshi"
+  },
+  {
+    "type": "inquiry",
+    "subject": "Late delivery",
+    "status": "open",
+    "date": "2022-10-08 01:50:31",
+    "user_id": "U545",
+    "user_name": "Vihaan Kapoor"
+  },
+  {
+    "type": "complaint",
+    "subject": "Refund request",
+    "status": "closed",
+    "date": "2023-10-01 02:04:26",
+    "user_id": "U546",
+    "user_name": "Anaya Gupta"
+  },
+  {
+    "type": "resolution",
+    "subject": "Late delivery",
+    "status": "closed",
+    "date": "2022-02-19 10:29:02",
+    "user_id": "U547",
+    "user_name": "Sai Verma"
+  },
+  {
+    "type": "complaint",
+    "subject": "Refund request",
+    "status": "pending",
+    "date": "2023-06-07 11:14:49",
+    "user_id": "U548",
+    "user_name": "Vihaan Mehta"
+  },
+  {
+    "type": "resolution",
+    "subject": "Account issue",
+    "status": "closed",
+    "date": "2023-07-08 12:48:32",
+    "user_id": "U549",
+    "user_name": "Ishaan Patel"
+  }
+]
