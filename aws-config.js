@@ -4,15 +4,15 @@ import { S3Client, PutObjectCommand, ListObjectsV2Command, DeleteObjectCommand, 
 
 class AWSConfig {
     constructor() {
-        this.accessKeyId = 'AKIARHJJMTTSEY2U6XQF';
-        this.secretAccessKey = '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';
+        this.accessKeyId = '****';
+        this.secretAccessKey = '****';
         this.region = 'us-east-1';
         this.bedrockAgentClient = null;
         this.s3Client = null;
         this.bucketName = 'chat-history-1512';
         // Try inference profile first, fallback to direct model ID
-        this.modelArn = 'arn:aws:bedrock:us-east-1::inference-profile/us.anthropic.claude-3-7-sonnet-20250219-v1:0';
-        this.knowledgeBaseId = 'P33K9CRFWL';
+        this.modelArn = '****';
+        this.knowledgeBaseId = '*****';
         this.initialized = false;
         
         // Auto-initialize on construction
